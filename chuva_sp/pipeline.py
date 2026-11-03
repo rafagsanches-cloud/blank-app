@@ -112,7 +112,7 @@ def leia_me(sat: dict, postos: dict | None, lags: dict) -> list[tuple[str, str]]
         ("#", "Limitações"),
         ("ANA, DAEE/SIBH, INMET", "Os servidores destes órgãos não estavam acessíveis no ambiente em que esta pasta foi gerada. O código para baixá-los está pronto (python -m chuva_sp --ana --inmet) e deve ser rodado em uma máquina com acesso."),
         ("IMERG", "Versão 'Late Run' v07 (acesso aberto). A 'Final Run' exige login NASA Earthdata."),
-        ("CMORPH", "Grade de 0,25° horária (a de 8 km/30 min existe, mas não foi usada pelo volume)."),
+        ("CMORPH", "Grade de 0,25° horária (a de 8 km/30 min existe, mas não foi usada pelo volume). Em SP, os totais do CMORPH CDR ficam ~18% abaixo dos outros produtos (média anual 2001–2020 no Estado: ~1.260 mm, contra ~1.480–1.520 mm). A soma das 24 horas confere com o arquivo diário oficial, portanto a diferença é do produto e não do processamento."),
         ("GPCP", "Grade grossa (2,5° mensal; 1° diário). Útil como referência climática de longo prazo."),
         ("TRMM", "O IMERG v07 já incorpora a era TRMM (1998–2014). O TRMM 3B42 original exige login NASA Earthdata."),
     ]

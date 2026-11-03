@@ -190,18 +190,18 @@ with abas[0]:
     if tabela:
         unid = {"anual": "mm/ano", "mensal": "mm/mês", "diario": "mm/dia", "horario": "mm/h"}[escala]
         fig.update_layout(title=f"{N[regiao]} – chuva {escala.replace('diario', 'diária').replace('horario', 'horária')}", yaxis_title=unid)
-        st.plotly_chart(estilo(fig), use_container_width=True)
+        st.plotly_chart(estilo(fig), width="stretch")
         t = pd.DataFrame(tabela)
         c1, c2 = st.columns([3, 1])
         with c1:
             with st.expander("Tabela"):
-                st.dataframe(t.round(2), use_container_width=True)
+                st.dataframe(t.round(2), width="stretch")
         with c2:
             st.download_button("Baixar seleção (CSV)", t.to_csv().encode("utf-8"), f"chuva_{regiao}_{escala}.csv", "text/csv")
         if escala in ("anual", "mensal"):
             r = t.describe().T[["count", "mean", "std", "min", "max"]].round(1)
             r.columns = ["n", "média", "desvio", "mín", "máx"]
-            st.dataframe(r, use_container_width=True)
+            st.dataframe(r, width="stretch")
     elif escolhidos:
         st.info("Sem dados para esta combinação (os produtos horários são só CMORPH e IMERG).")
 
@@ -226,9 +226,9 @@ with abas[1]:
         unid = "mm" if modo.startswith("Média") else "mm/década"
         fig = figura_mapa(val.reindex(u.sigla), escala_cor, faixa, titulo, unid)
         with c2:
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         with st.expander("Tabela por UGRHI"):
-            st.dataframe(d[["UGRHI", "valor"]].round(1), use_container_width=True, hide_index=True)
+            st.dataframe(d[["UGRHI", "valor"]].round(1), width="stretch", hide_index=True)
 
 # ------------------------------------------------------------------ 3. extremos
 with abas[2]:
@@ -251,10 +251,10 @@ with abas[2]:
     if linhas:
         fig.update_layout(title=f"{ind} – {N[regiao]}", yaxis_title=indices.DESCRICAO[ind][1])
         with c2:
-            st.plotly_chart(estilo(fig, 400), use_container_width=True)
+            st.plotly_chart(estilo(fig, 400), width="stretch")
         t = pd.DataFrame(linhas).set_index("produto").round(4)
         t["significativa (p<0,05)"] = np.where(t["mk_p"] < 0.05, "sim", "não")
-        st.dataframe(t, use_container_width=True)
+        st.dataframe(t, width="stretch")
         st.caption("Sen e linear por década; MK = teste de Mann-Kendall. Para QC, gráficos por índice e lote completo use o ClimdexSP em R.")
 
 # ------------------------------------------------------------------ 4. postos
@@ -266,11 +266,11 @@ with abas[3]:
         c1, c2 = st.columns([2, 3])
         with c1:
             st.metric("Postos em SP com dados desde 1980", f"{len(inv):,}".replace(",", "."))
-            st.dataframe(inv.groupby("rede").size().rename("postos"), use_container_width=True)
+            st.dataframe(inv.groupby("rede").size().rename("postos"), width="stretch")
             cont = pd.read_csv(P / "postos_n_por_ano.csv", index_col=0)
             figc = go.Figure(go.Bar(x=cont.index, y=cont["SP"], marker_color=CORES["CHIRPS"], name="postos"))
             figc.update_layout(title="Postos com dado por ano (Estado)", yaxis_title="postos")
-            st.plotly_chart(estilo(figc, 300), use_container_width=True)
+            st.plotly_chart(estilo(figc, 300), width="stretch")
         with c2:
             fig = figura_mapa(titulo="Postos pluviométricos (GHCN-Daily)")
             for i, (rede, g) in enumerate(inv.groupby("rede")):
@@ -279,7 +279,7 @@ with abas[3]:
                                                      line=dict(width=1, color="#fcfcfb")),
                                          text=g.id + " – " + g.nome + " (" + g.ugrhi + ")", hoverinfo="text"))
             fig.update_layout(legend=dict(orientation="h", y=-0.02), showlegend=True)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         dd = postos_diario()
         sel_ugrhi = st.selectbox("Filtrar postos pela UGRHI", ["(todas)"] + list(ugrhis().sigla), format_func=lambda s: N.get(s, s))
         lista = inv if sel_ugrhi == "(todas)" else inv[inv.ugrhi == sel_ugrhi]
@@ -289,8 +289,8 @@ with abas[3]:
             m = s.resample("MS").sum(min_count=28)
             figp = go.Figure(go.Bar(x=m.index, y=m.values, marker_color=CORES["POSTOS"], name="mm/mês"))
             figp.update_layout(title=f"{posto} – total mensal (mm)", yaxis_title="mm/mês")
-            st.plotly_chart(estilo(figp, 320), use_container_width=True)
-        st.dataframe(lista, use_container_width=True, height=300)
+            st.plotly_chart(estilo(figp, 320), width="stretch")
+        st.dataframe(lista, width="stretch", height=300)
 
 # ------------------------------------------------------------------ 5. validação
 with abas[4]:
@@ -305,21 +305,21 @@ with abas[4]:
         for p in [x for x in CORES if x in v.produto.unique()]:
             fig.add_trace(go.Box(y=v.loc[v.produto == p, met], name=p, marker_color=CORES[p], boxmean=True))
         fig.update_layout(title=f"{met} por produto (um ponto por posto)", showlegend=False, hovermode="closest")
-        st.plotly_chart(estilo(fig, 380), use_container_width=True)
+        st.plotly_chart(estilo(fig, 380), width="stretch")
         res = v.groupby("produto")[[c for c in v.columns if c.startswith(("diario_", "mensal_"))]].median().round(3)
         st.markdown("**Mediana entre postos**")
-        st.dataframe(res.T, use_container_width=True)
+        st.dataframe(res.T, width="stretch")
         with st.expander("Tabela completa por posto"):
-            st.dataframe(v, use_container_width=True)
+            st.dataframe(v, width="stretch")
 
 # ------------------------------------------------------------------ 6. produtos e fontes
 with abas[5]:
     from chuva_sp.excel import tabela_produtos
 
     st.subheader("Produtos de precipitação por satélite")
-    st.dataframe(tabela_produtos().set_index("Produto"), use_container_width=True)
+    st.dataframe(tabela_produtos().set_index("Produto"), width="stretch")
     st.subheader("Bases de dados")
-    st.dataframe(fontes.tabela(), use_container_width=True, hide_index=True)
+    st.dataframe(fontes.tabela(), width="stretch", hide_index=True)
 
 # ------------------------------------------------------------------ 7. excel e busca
 with abas[6]:

@@ -59,6 +59,7 @@ def persiann_ano(ano: int, workers: int = 16, refazer: bool = False) -> pd.DataF
     if not chaves:
         return None
     datas = {k: _data_da_chave(k, r"_(\d{8})_c", "%Y%m%d") for k in chaves}
+    chaves = base.versao_mais_recente(chaves, datas)
     # garante a grade antes das threads
     _persiann_ler(f"{S3['PERSIANN']}/{chaves[0]}")
     res = base.executar_em_paralelo(lambda k: _persiann_ler(f"{S3['PERSIANN']}/{k}"), chaves, workers)
@@ -101,6 +102,7 @@ def cmorph_mes(ano: int, mes: int, workers: int = 24, refazer: bool = False) -> 
     if not chaves:
         return None
     horas = {k: _data_da_chave(k, r"HLY_(\d{10})\.nc", "%Y%m%d%H") for k in chaves}
+    chaves = base.versao_mais_recente(chaves, horas)
     _cmorph_ler(f"{S3['CMORPH']}/{chaves[0]}")
     res = base.executar_em_paralelo(lambda k: _cmorph_ler(f"{S3['CMORPH']}/{k}"), chaves, workers)
     ok = sorted([k for k in chaves if res[k] is not None], key=lambda k: horas[k])
@@ -153,6 +155,7 @@ def gpcp_mensal(inicio=config.DATA_INICIO, fim=config.DATA_FIM, workers: int = 1
     for ano in range(max(1979, inicio.year), fim.year + 1):
         chaves += [k for k in base.listar_s3(S3["GPCP_M"], f"data/{ano}/") if k.endswith(".nc")]
     meses = {k: _data_da_chave(k, r"_d(\d{6})_c", "%Y%m") for k in chaves}
+    chaves = base.versao_mais_recente(chaves, meses)
     _gpcp_ler(f"{S3['GPCP_M']}/{chaves[0]}", "GPCP_M")
     res = base.executar_em_paralelo(lambda k: _gpcp_ler(f"{S3['GPCP_M']}/{k}", "GPCP_M"), chaves, workers)
     ok = sorted([k for k in chaves if res[k] is not None], key=lambda k: meses[k])
@@ -174,6 +177,7 @@ def gpcp_diario_ano(ano: int, workers: int = 16, refazer: bool = False) -> pd.Da
     if not chaves:
         return None
     datas = {k: _data_da_chave(k, r"_d(\d{8})_c", "%Y%m%d") for k in chaves}
+    chaves = base.versao_mais_recente(chaves, datas)
     _gpcp_ler(f"{S3['GPCP_D']}/{chaves[0]}", "GPCP_D")
     res = base.executar_em_paralelo(lambda k: _gpcp_ler(f"{S3['GPCP_D']}/{k}", "GPCP_D"), chaves, workers)
     ok = sorted([k for k in chaves if res[k] is not None], key=lambda k: datas[k])

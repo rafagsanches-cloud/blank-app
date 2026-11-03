@@ -173,10 +173,10 @@ def escrever_principal(caminho: Path, sat: dict, postos: dict | None, validacao:
 def escrever_horario(caminho: Path, produto: str, h: pd.DataFrame, leia_me: list) -> Path:
     px = Pasta(caminho)
     px.texto("LEIA-ME", leia_me)
-    d = h.copy()
+    d = h.astype("float64").round(2)  # float64 antes de arredondar evita resíduos do float32
     d.index = pd.DatetimeIndex(d.index)
     d.index.name = "data_hora_UTC"
-    d = d.round(2).reset_index()
+    d = d.reset_index()
     d.insert(1, "data_hora_local_UTC-3", d["data_hora_UTC"] + pd.Timedelta(hours=config.FUSO_LOCAL_H))
     d = _colunas_com_nomes(d)
     # Excel aceita até 1.048.575 linhas de dados por planilha

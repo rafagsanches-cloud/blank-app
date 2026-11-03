@@ -116,6 +116,21 @@ ugrhi <- carregar_ugrhi()
 
 O ClimdexSP calcula PRCPTOT, SDII, R10mm, R20mm, Rnnmm, CDD, CWD, R95p, R99p, R95pTOT, R99pTOT, Rx1day e Rx5day (anuais e mensais). Os resultados foram conferidos contra o pacote `climdex.pcic` com a série do CHIRPS para o Estado, de 1981 a 2025: os 11 índices principais coincidem em todos os anos. A função `escrever_rclimdex()` exporta qualquer série no formato de entrada do RClimDex original.
 
+## Primeiros resultados (Estado de São Paulo)
+
+Média anual da chuva no Estado e tendência de Sen sobre toda a série de cada produto (teste de Mann-Kendall):
+
+| Produto | Anos | Média 2001–2020 (mm) | Tendência (mm/década) | p (MK) |
+|---|---|---|---|---|
+| CHIRPS | 1981–2025 | 1.475 | −73 | 0,001 |
+| IMERG | 1998–2025 | 1.500 | −110 | 0,025 |
+| PERSIANN | 1983–2025 | 1.515 | −57 | 0,022 |
+| CMORPH | 1998–2025 | 1.257 | −169 | <0,001 |
+| GPCP | 1980–2025 | 1.482 | −55 | 0,013 |
+| Postos (média) | 1980–1999 | – | −29 | 0,59 |
+
+Todos os produtos de satélite indicam redução da chuva anual no Estado, influenciada pelos anos secos recentes (2014, 2020–2021, 2024). O CMORPH fica cerca de 18% abaixo dos demais em todo o período; conferi que a soma das 24 horas reproduz o arquivo diário oficial do CMORPH, então a diferença é do produto. Na validação contra os postos, a correlação diária mediana foi 0,52 para o CHIRPS, 0,41 para o PERSIANN, 0,39 para o IMERG e 0,38 para o CMORPH; na escala mensal sobe para 0,78–0,93. A comparação do IMERG e do CMORPH usa só 51 postos, porque poucas séries do GHCN passam de 1998.
+
 ## Métodos
 
 Média areal. Cada pixel recebe peso igual à fração da sua área dentro da UGRHI, multiplicada por cos(latitude). Pixels sem dado são ignorados, e a média só é calculada quando pelo menos metade da área tem dado. O Estado é a soma das 22 UGRHIs.

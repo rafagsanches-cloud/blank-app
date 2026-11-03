@@ -101,6 +101,18 @@ def listar_s3(bucket_url: str, prefixo: str) -> list[str]:
         token = m.group(1)
 
 
+def versao_mais_recente(chaves: list[str], datas: dict) -> list[str]:
+    """Quando há mais de um arquivo para a mesma data (reprocessamento), fica o de criação mais recente.
+
+    Os nomes NOAA terminam em _cAAAAMMDD.nc, então a ordem alfabética coloca o mais novo por último.
+    """
+    escolhido = {}
+    for k in sorted(chaves):
+        if datas.get(k) is not None:
+            escolhido[datas[k]] = k
+    return [escolhido[d] for d in sorted(escolhido)]
+
+
 # ---------------------------------------------------------------- recortes
 def indices_recorte(coord: np.ndarray, vmin: float, vmax: float) -> slice:
     """Fatia de índices de uma coordenada 1-D (crescente ou decrescente) dentro de [vmin, vmax]."""
