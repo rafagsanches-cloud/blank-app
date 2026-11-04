@@ -442,8 +442,14 @@ class Dispersao(QChartView):
         ax.setRange(-0.6, len(grupos) - 0.4)
         ay = QValueAxis()
         ay.setRange(*dominio)
-        ay.setTickCount(6)
-        ay.setLabelFormat("%.0f" if dominio[1] - dominio[0] > 20 else "%.2f")
+        passo = passo_bonito(dominio[1] - dominio[0])
+        ay.setTickType(QValueAxis.TicksDynamic)
+        ay.setTickAnchor(math.ceil(dominio[0] / passo) * passo)
+        ay.setTickInterval(passo)
+        casas = max(0, -math.floor(math.log10(passo)))
+        if abs(passo * 10 ** casas - round(passo * 10 ** casas)) > 1e-9:
+            casas += 1
+        ay.setLabelFormat(f"%.{casas}f")
         for e in (ax, ay):
             _estilo_eixo(e)
         ax.setGridLineVisible(False)
