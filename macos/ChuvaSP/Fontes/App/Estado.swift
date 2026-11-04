@@ -112,6 +112,10 @@ struct Regiao: Identifiable, Hashable {
     /// anéis em (lon, lat)
     let aneis: [[CGPoint]]
     var id: String { sigla }
+
+    // CGPoint não é Hashable no SDK do macOS 14: a sigla identifica a região
+    static func == (a: Regiao, b: Regiao) -> Bool { a.sigla == b.sigla }
+    func hash(into h: inout Hasher) { h.combine(sigla) }
 }
 
 struct SerieMensal {
