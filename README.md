@@ -8,6 +8,10 @@ Este repositório reúne três peças que trabalham juntas:
 
 Os arquivos já processados estão em `saidas/` e `dados/`, prontos para uso.
 
+## App para Mac
+
+`macos/` tem o **Chuva SP**, app nativo para macOS (SwiftUI e Swift Charts, Apple Silicon e Intel, macOS 14 ou mais novo). Ele traz os mesmos dados deste repositório dentro dele e funciona sem internet: visão geral, mapa clicável das UGRHIs, séries mensais e diárias, índices ETCCDI recalculáveis como no RClimDex, validação satélite × postos e lista de postos. Instalação e compilação: [`macos/LEIAME.md`](macos/LEIAME.md).
+
 ## Arquivos prontos
 
 | Arquivo | Conteúdo |
@@ -147,7 +151,8 @@ O arquivo enviado (`dados/brutos/sibh_ugrhis_sp.csv`, exportado do GeoServer do 
 
 ```
 chuva_sp/            pacote Python (satelites/, estacoes/, agregacao, validacao, excel, pipeline)
-streamlit_app.py     aplicativo
+streamlit_app.py     aplicativo web (Streamlit)
+macos/               app nativo para Mac (SwiftUI), dados embutidos e scripts de compilação
 R/                   ClimdexSP, app Shiny, fontes de dados, conversão das UGRHIs
 dados/brutos/        CSV original das UGRHIs
 dados/ugrhi/         shapefile, GeoPackage, GeoJSON simplificado e .rds

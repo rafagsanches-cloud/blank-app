@@ -141,7 +141,7 @@ struct MapaUGRHI: View {
                     foco = nil
                 }
             }
-            .onTapGesture(count: 1, coordinateSpace: .local) { pt in
+            .onTapGesture(count: 1) { pt in
                 if let s = formas.first(where: { $0.path.contains(pt, eoFill: true) })?.sigla {
                     estado.regiao = estado.regiao == s ? "SP" : s
                 }
