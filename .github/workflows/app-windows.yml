@@ -1,0 +1,78 @@
+name: App Windows (Chuva SP)
+
+on:
+  push:
+    branches: [claude/happy-brahmagupta-udhdxu]
+    paths: ["windows/**", "macos/ChuvaSP/Dados/**", ".github/workflows/app-windows.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: app-windows
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install "PySide6>=6.7" "pyinstaller>=6.10"
+          python -c "import PySide6, sys; print(sys.version); print('PySide6', PySide6.__version__)"
+
+      - name: Testar os cálculos (comparação com o ClimdexSP em R)
+        run: python windows/testar_calculos.py
+
+      - name: Gerar o executável
+        run: >
+          python -m PyInstaller --noconfirm --clean --windowed --name ChuvaSP --icon windows/icone.ico
+          --add-data "macos/ChuvaSP/Dados;Dados" --add-data "windows/chuva_sp_win/icone.png;chuva_sp_win"
+          --paths windows --exclude-module tkinter windows/ChuvaSP.py
+
+      - name: Capturas de tela de cada aba (claro e escuro)
+        run: |
+          New-Item -ItemType Directory -Force capturas | Out-Null
+          foreach ($t in "claro", "escuro") {
+            $p = Start-Process -Wait -PassThru -FilePath "dist\ChuvaSP\ChuvaSP.exe" -ArgumentList "--capturas", "$PWD\capturas", "--tema", $t
+            Write-Host "tema $t terminou com código $($p.ExitCode)"
+            if ($p.ExitCode -ne 0) { exit 1 }
+          }
+          Get-ChildItem capturas | Format-Table Name, Length
+
+      - name: Gerar o instalador e o zip portátil
+        run: |
+          choco install innosetup -y --no-progress | Out-Null
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" windows\instalador.iss
+          if ($LASTEXITCODE -ne 0) { exit 1 }
+          Compress-Archive -Path dist\ChuvaSP -DestinationPath dist_instalador\ChuvaSP-Windows-portatil.zip -Force
+          Get-ChildItem dist_instalador | Format-Table Name, Length
+
+      - name: Guardar o app e as capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Chuva-SP-Windows
+          path: |
+            dist_instalador/*
+            capturas/*.png
+          if-no-files-found: warn
+
+      - name: Publicar versão para download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete app-windows --yes --cleanup-tag 2>$null
+          $arquivos = @("dist_instalador\ChuvaSP-Instalador.exe", "dist_instalador\ChuvaSP-Windows-portatil.zip") + (Get-ChildItem capturas\*.png).FullName
+          gh release create app-windows --prerelease --target $env:GITHUB_SHA --title "Chuva SP para Windows" --notes-file windows/NOTAS_VERSAO.md @arquivos
