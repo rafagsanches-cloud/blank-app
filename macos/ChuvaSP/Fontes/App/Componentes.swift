@@ -45,7 +45,7 @@ struct CartaoNumero: View {
             Text(nota).font(.caption).foregroundStyle(.secondary).lineLimit(2)
         }
         .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, minHeight: 124, alignment: .topLeading)
         .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(Color(nsColor: .controlBackgroundColor)))
         .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(Color(nsColor: .separatorColor), lineWidth: 1))
     }
@@ -159,7 +159,7 @@ struct GraficoLinhas: View {
         }
         .chartForegroundStyleScale(domain: lista.map(\.nome), range: lista.map(\.cor))
         .chartXSelection(value: $selecionado)
-        .chartXScale(domain: xMin...xMax)
+        .chartXScale(domain: xMin...xMax, range: .plotDimension(startPadding: 4, endPadding: 16))
         .chartYScale(domain: .automatic(includesZero: incluirZero))
         .chartXAxis {
             AxisMarks(values: ticksX) { v in
@@ -174,7 +174,7 @@ struct GraficoLinhas: View {
             AxisMarks(position: .leading) { v in
                 AxisGridLine()
                 AxisValueLabel {
-                    if let y = v.as(Double.self) { Text(Fmt.num(y, casas == 0 ? 0 : 1)) }
+                    if let y = v.as(Double.self) { Text(Fmt.num(y, abs(y) >= 10 || y == y.rounded() ? 0 : 1)) }
                 }
             }
         }

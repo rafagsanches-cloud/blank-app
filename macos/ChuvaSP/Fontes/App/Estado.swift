@@ -243,6 +243,10 @@ final class EstadoApp: ObservableObject {
             dados = BaseDados()
             erro = error.localizedDescription
         }
+        // argumentos opcionais: --aba <nome> --regiao <sigla>
+        let args = CommandLine.arguments
+        if let i = args.firstIndex(of: "--aba"), i + 1 < args.count, let a = Aba(rawValue: args[i + 1]) { aba = a }
+        if let i = args.firstIndex(of: "--regiao"), i + 1 < args.count { regiao = args[i + 1] }
     }
 
     var regiaoAtual: Regiao? { dados.regioes.first { $0.sigla == regiao } }

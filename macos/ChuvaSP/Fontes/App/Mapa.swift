@@ -188,6 +188,7 @@ private struct ItemRanking: Identifiable {
     var id: String { sigla }
 }
 
+/// Ranking das UGRHIs em barras horizontais simples (clique para escolher a UGRHI).
 struct RankingUGRHI: View {
     @EnvironmentObject var estado: EstadoApp
     let valores: [String: Double]
@@ -201,26 +202,30 @@ struct RankingUGRHI: View {
                 return ItemRanking(sigla: r.sigla, rotulo: r.rotulo, valor: v)
             }
             .sorted { $0.valor > $1.valor }
+        let maximo = max(itens.map { abs($0.valor) }.max() ?? 1, 1e-9)
         let selecionada = estado.regiao
-        Chart(itens) { i in
-            BarMark(x: .value(unidade, i.valor), y: .value("UGRHI", i.rotulo))
-                .foregroundStyle(escala.cor(i.valor))
-                .opacity(selecionada == "SP" || selecionada == i.sigla ? 1 : 0.45)
-                .cornerRadius(2)
-        }
-        .chartYAxis {
-            AxisMarks { _ in
-                AxisValueLabel()
-            }
-        }
-        .chartXAxis {
-            AxisMarks { v in
-                AxisGridLine()
-                AxisValueLabel {
-                    if let x = v.as(Double.self) { Text(Fmt.num(x, 0)) }
+        VStack(alignment: .leading, spacing: 5) {
+            ForEach(itens) { i in
+                let fracao = abs(i.valor) / maximo
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack {
+                        Text(i.rotulo).lineLimit(1)
+                        Spacer(minLength: 8)
+                        Text(unidade == "mm" ? Fmt.num(i.valor, 0) : Fmt.sinal(i.valor, 1)).monospacedDigit()
+                    }
+                    .font(.caption)
+                    .fontWeight(i.sigla == selecionada ? .semibold : .regular)
+                    GeometryReader { g in
+                        RoundedRectangle(cornerRadius: 2)
+                            .fill(escala.cor(i.valor))
+                            .frame(width: max(2, g.size.width * fracao), height: 7)
+                    }
+                    .frame(height: 7)
                 }
+                .opacity(selecionada == "SP" || selecionada == i.sigla ? 1 : 0.55)
+                .contentShape(Rectangle())
+                .onTapGesture { estado.regiao = selecionada == i.sigla ? "SP" : i.sigla }
             }
         }
-        .frame(height: max(300, CGFloat(itens.count) * 22))
     }
 }

@@ -45,14 +45,18 @@ jobs:
           "macos/build/Chuva SP.app/Contents/MacOS/ChuvaSP" --capturas "$PWD/capturas"
           ls -la capturas
 
-      - name: Abrir o app de verdade (janela)
+      - name: Abrir o app de verdade (janelas)
         continue-on-error: true
         run: |
-          open "macos/build/Chuva SP.app"
-          sleep 12
-          pgrep -fl ChuvaSP
-          screencapture -x capturas/0_janela.png || true
-          pkill -f ChuvaSP || true
+          APP="macos/build/Chuva SP.app"
+          for ABA in visaoGeral mapa extremos postos; do
+            open -n "$APP" --args --aba "$ABA" --regiao UGRHI13
+            sleep 9
+            pgrep -fl ChuvaSP || echo "app não está rodando"
+            screencapture -x "capturas/0_janela_$ABA.png" || true
+            pkill -f "Chuva SP.app/Contents/MacOS/ChuvaSP" || true
+            sleep 2
+          done
 
       - name: Guardar o app e as capturas
         if: always()

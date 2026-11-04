@@ -119,7 +119,7 @@ struct TabelaTendencias: View {
                             Circle().fill(item.produto.cor).frame(width: 8, height: 8)
                             Text(item.produto.nome)
                         }
-                        Text(t.map { "\($0.anoInicio)–\($0.anoFim)" } ?? "—").foregroundStyle(.secondary)
+                        Text(verbatim: t.map { "\(String($0.anoInicio))–\(String($0.anoFim))" } ?? "—").foregroundStyle(.secondary)
                         Text(t.map { String($0.n) } ?? "—")
                         Text(Fmt.sinal(t?.senPorDecada, 2))
                         Text((t?.significativa ?? false ? "● " : "") + Fmt.p(t?.mkP))

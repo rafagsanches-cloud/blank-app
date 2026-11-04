@@ -71,7 +71,7 @@ struct VisaoGeralView: View {
                                     Circle().fill(p.cor).frame(width: 8, height: 8)
                                     Text(p.nome)
                                 }
-                                Text(t.map { "\($0.anoInicio)–\($0.anoFim)" } ?? "—").foregroundStyle(.secondary)
+                                Text(verbatim: t.map { "\(String($0.anoInicio))–\(String($0.anoFim))" } ?? "—").foregroundStyle(.secondary)
                                 Text(Fmt.sinal(t?.senPorDecada, 1)).monospacedDigit()
                                 Text((t?.significativa ?? false ? "● " : "") + Fmt.p(t?.mkP)).monospacedDigit()
                             }

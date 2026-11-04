@@ -44,8 +44,9 @@ struct ValidacaoView: View {
         }
         let ys = pontos.map(\.y).sorted()
         let baixo = ys.isEmpty ? 0 : ys[Int(Double(ys.count - 1) * 0.01)]
-        let alto = ys.isEmpty ? 1 : ys[Int(Double(ys.count - 1) * 0.99)]
-        let dominioY = min(baixo, metrica == .viesPct ? 0 : baixo)...max(alto, baixo + 0.01)
+        let alto = ys.isEmpty ? 1 : ys[Int(Double(ys.count - 1) * 0.995)]
+        let folga = max((alto - baixo) * 0.05, 0.01)
+        let dominioY = (min(baixo, metrica == .viesPct ? 0 : baixo) - folga)...(alto + folga)
 
         return VStack(alignment: .leading, spacing: 18) {
             CabecalhoRegiao(subtitulo: "Cada posto comparado com o pixel do satélite que o contém")
