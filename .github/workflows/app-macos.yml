@@ -6,15 +6,60 @@ on:
     paths: ["macos/**", ".github/workflows/app-macos.yml"]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: app-macos
+  cancel-in-progress: true
+
 jobs:
   construir:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+
       - name: Ambiente
         run: |
           sw_vers
-          uname -m
-          swift --version
-          xcodebuild -version
-          ls /Applications | grep -i xcode
+          swiftc --version
+
+      - name: Testar os cálculos (comparação com o ClimdexSP em R)
+        run: bash macos/testar_calculos.sh
+
+      - name: Compilar o app
+        run: bash macos/construir_app.sh
+
+      - name: Capturas de tela de cada aba
+        run: |
+          mkdir -p capturas
+          "macos/build/Chuva SP.app/Contents/MacOS/ChuvaSP" --capturas "$PWD/capturas"
+          ls -la capturas
+
+      - name: Abrir o app de verdade (janela)
+        continue-on-error: true
+        run: |
+          open "macos/build/Chuva SP.app"
+          sleep 12
+          pgrep -fl ChuvaSP
+          screencapture -x capturas/0_janela.png || true
+          pkill -f ChuvaSP || true
+
+      - name: Guardar o app e as capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Chuva-SP-macOS
+          path: |
+            macos/build/Chuva-SP-macOS.zip
+            capturas/*.png
+          if-no-files-found: warn
+
+      - name: Publicar versão para download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete app-macos --yes --cleanup-tag || true
+          gh release create app-macos --prerelease --target "$GITHUB_SHA" \
+            --title "Chuva SP para macOS" --notes-file macos/NOTAS_VERSAO.md \
+            macos/build/Chuva-SP-macOS.zip capturas/*.png
