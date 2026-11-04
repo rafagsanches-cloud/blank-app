@@ -15,7 +15,8 @@ struct PostosView: View {
         let reg = estado.regiao
         let lista = estado.postosFiltrados.sorted(using: ordem)
         let barras = (estado.dados.postosPorAno[reg] ?? []).map { BarraAno(ano: $0.ano, postos: $0.postos) }.sorted { $0.ano < $1.ano }
-        let rotulos = barras.map { String($0.ano) }.filter { (Int($0) ?? 0) % 5 == 0 }
+        let primeiro = barras.first?.ano ?? 0, ultimo = barras.last?.ano ?? 0
+        let rotulos = barras.map(\.ano).filter { $0 % 5 == 0 && $0 > primeiro + 1 && $0 < ultimo - 1 }.map { String($0) }
 
         VStack(alignment: .leading, spacing: 18) {
             CabecalhoRegiao(subtitulo: "\(Fmt.num(Double(estado.postosNaRegiao(reg).count), 0)) postos com dados desde 1980 (GHCN-Daily: ANA e DAEE)")
@@ -40,13 +41,13 @@ struct PostosView: View {
                     Text("\(lista.count) postos").foregroundStyle(.secondary).monospacedDigit()
                 }
                 Table(lista, sortOrder: $ordem) {
-                    TableColumn("Código GHCN", value: \.id)
-                    TableColumn("Nome", value: \.nome)
-                    TableColumn("Rede", value: \.rede)
-                    TableColumn("Código original", value: \.codigoOriginal)
-                    TableColumn("UGRHI", value: \.sigla)
-                    TableColumn("Início", value: \.inicio)
-                    TableColumn("Fim", value: \.fim)
+                    TableColumn("Código GHCN", value: \.id).width(min: 110, ideal: 120)
+                    TableColumn("Nome", value: \.nome).width(min: 150, ideal: 230)
+                    TableColumn("Rede", value: \.rede).width(min: 80, ideal: 110)
+                    TableColumn("Código original", value: \.codigoOriginal).width(min: 90, ideal: 110)
+                    TableColumn("UGRHI", value: \.sigla).width(min: 70, ideal: 80)
+                    TableColumn("Início", value: \.inicio).width(min: 85, ideal: 90)
+                    TableColumn("Fim", value: \.fim).width(min: 85, ideal: 90)
                     TableColumn("Dias com dado", value: \.dias) { p in
                         Text(Fmt.num(Double(p.dias), 0)).monospacedDigit()
                     }
