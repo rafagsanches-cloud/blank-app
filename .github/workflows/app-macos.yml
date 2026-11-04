@@ -1,0 +1,20 @@
+name: App macOS (Chuva SP)
+
+on:
+  push:
+    branches: [claude/happy-brahmagupta-udhdxu]
+    paths: ["macos/**", ".github/workflows/app-macos.yml"]
+  workflow_dispatch:
+
+jobs:
+  construir:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ambiente
+        run: |
+          sw_vers
+          uname -m
+          swift --version
+          xcodebuild -version
+          ls /Applications | grep -i xcode
