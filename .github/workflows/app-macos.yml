@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        imagem: [macos-26, macos-14]
+        imagem: [macos-14]
     runs-on: ${{ matrix.imagem }}
     steps:
       - uses: actions/checkout@v4

@@ -146,16 +146,26 @@ struct ResultadoIndices {
     }
 }
 
-/// Quantil tipo 8 de Hyndman & Fan (o mesmo do climdex.pcic e do R type = 8).
+/// Quantil tipo 8 de Hyndman & Fan, reproduzindo exatamente stats::quantile(type = 8) do R
+/// (a mesma folga numérica e a mesma ordem das contas), como no climdex.pcic.
 func quantilTipo8(_ ordenados: [Double], _ p: Double) -> Double {
     let n = ordenados.count
     guard n > 0 else { return .nan }
-    let h = (Double(n) + 1.0 / 3.0) * p + 1.0 / 3.0
-    let j = Int(floor(h))
-    let g = h - Double(j)
-    if j < 1 { return ordenados[0] }
-    if j >= n { return ordenados[n - 1] }
-    return (1 - g) * ordenados[j - 1] + g * ordenados[j]
+    let a = 1.0 / 3.0, b = 1.0 / 3.0
+    let folga = 4 * Double.ulpOfOne
+    let nppm = a + p * (Double(n) + 1 - a - b)
+    let j = Int(floor(nppm + folga))
+    var h = nppm - Double(j)
+    if abs(h) < folga { h = 0 }
+    // vetor estendido do R: x[1], x[1], x..., x[n], x[n]; posições j+2 e j+3 (base 1)
+    func estendido(_ k: Int) -> Double {
+        let i = k - 2  // índice base 1 no vetor original
+        return ordenados[min(max(i, 1), n) - 1]
+    }
+    let xlo = estendido(j + 2), xhi = estendido(j + 3)
+    if h == 1 { return xhi }
+    if h > 0 && h < 1 && xlo != xhi { return (1 - h) * xlo + h * xhi }
+    return xlo
 }
 
 func calcularIndices(_ serie: SerieDiaria, _ p: ParametrosIndices) -> ResultadoIndices {
@@ -404,7 +414,8 @@ func tendencia(anos: [Int], valores: [Double]) -> Tendencia? {
     }
     let gl = Double(n - 2)
     let se = (sse / gl / sxx).squareRoot()
-    let pOLS = se > 0 ? pValorT(b / se, gl: gl) : 0
+    // série constante: o R devolve p indefinido (NaN); ajuste perfeito com inclinação: p = 0
+    let pOLS = se > 0 ? pValorT(b / se, gl: gl) : (b == 0 ? .nan : 0)
     let mk = mannKendall(y)
     return Tendencia(n: n, anoInicio: Int(t.first!), anoFim: Int(t.last!), senPorDecada: 10 * sen,
                      olsPorDecada: 10 * b, erroPadraoPorDecada: 10 * se, pOLS: pOLS, mkTau: mk.tau, mkP: mk.p)
