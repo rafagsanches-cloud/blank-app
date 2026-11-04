@@ -6,15 +6,16 @@ import hashlib
 
 from PySide6.QtCore import QLocale, QObject, Qt, Signal
 from PySide6.QtWidgets import (QAbstractItemView, QButtonGroup, QCheckBox, QComboBox, QDoubleSpinBox, QFrame,
-                               QGridLayout, QHBoxLayout, QHeaderView, QLabel, QLineEdit, QMenu, QPushButton,
+                               QGridLayout, QHBoxLayout, QHeaderView, QLineEdit, QMenu, QPushButton,
                                QScrollArea, QSpinBox, QTableWidget, QTableWidgetItem, QToolButton, QVBoxLayout,
                                QWidget)
 
 from .calculos import (INDICES, NAN, Parametros, descricao_indice, finito, mediana, nome_indice, num, p_texto,
                        sinal, tendencia, unidade)
-from .componentes import (BarrasAnos, Cabecalho, Cartao, CartaoNumero, Dispersao, EscalaCor, Grade, GraficoLinhas,
-                          Legenda, LegendaEscala, MapaUGRHI, Ranking, bolinha, limpar_layout, rotulo)
-from .dados import NOME_PRODUTO, PERIODO_MEDIA, PRODUTOS, SATELITES, BaseDados
+from .componentes import (BarrasAnos, Cabecalho, Cartao, CartaoNumero, Dispersao, EscalaCor, Fluxo, Grade, GraficoLinhas,
+                          Legenda, LegendaEscala, LinhaResponsiva, MapaUGRHI, Ranking, RolagemLateral, bolinha, limpar_layout,
+                          grupo, rotulo)
+from .dados import NOME_PRODUTO, PRODUTOS, SATELITES, BaseDados
 
 MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
 ABAS = [
@@ -161,22 +162,30 @@ class VisaoGeral(Pagina):
         self.leg_anual, self.leg_anual_lay = self.caixa()
         self.c_anual.add(self.leg_anual)
         self.v.addWidget(self.c_anual)
-        linha = QHBoxLayout()
-        linha.setSpacing(12)
+        linha = LinhaResponsiva(1050)
         self.c_clima = Cartao("Chuva média por mês", "Satélites: 2001–2020. Postos: 1980–1999, quando a rede do GHCN tinha mais postos ativos.")
         self.g_clima = GraficoLinhas(260)
         self.c_clima.add(self.g_clima)
         self.leg_clima, self.leg_clima_lay = self.caixa()
         self.c_clima.add(self.leg_clima)
         self.c_tend = Cartao("Tendência do total anual", "Estimador de Sen por década; p do teste de Mann-Kendall. ● marca p < 0,05.")
-        self.c_tend.setFixedWidth(430)
         self.tend_box, self.tend_lay = self.caixa()
         self.c_tend.add(self.tend_box)
         self.c_tend.corpo.addStretch(1)
-        linha.addWidget(self.c_clima, 1)
-        linha.addWidget(self.c_tend, 0, Qt.AlignTop)
-        self.v.addLayout(linha)
+        linha.add(self.c_clima, 1)
+        linha.add(self.c_tend, 0, largura_fixa=430)
+        self.v.addWidget(linha)
         self.v.addStretch(1)
+        self._colunas_kpi = 4
+
+    def resizeEvent(self, ev):
+        super().resizeEvent(ev)
+        colunas = 4 if self.viewport().width() >= 980 else 2
+        if colunas != self._colunas_kpi:
+            self._colunas_kpi = colunas
+            cartoes = [self.kpis.itemAt(i).widget() for i in range(self.kpis.count())]
+            for i, c in enumerate(cartoes):
+                self.kpis.addWidget(c, i // colunas, i % colunas)
 
     def atualizar(self):
         e, b = self.estado, self.estado.base
@@ -194,8 +203,10 @@ class VisaoGeral(Pagina):
                          "Rede da ANA e do DAEE, via GHCN-Daily"),
             CartaoNumero("Correlação diária CHIRPS × postos (mediana)", num(r_d, 2), "", f"Mensal: {num(r_m, 2)} · {n_d} postos"),
         ]
+        colunas = 4 if self.viewport().width() >= 980 else 2
+        self._colunas_kpi = colunas
         for i, c in enumerate(cartoes):
-            self.kpis.addWidget(c, 0, i)
+            self.kpis.addWidget(c, i // colunas, i % colunas)
         prods = e.produtos_visiveis
         series = {p: b.serie_anual(p, reg) for p in prods}
         series = {p: s for p, s in series.items() if s}
@@ -223,27 +234,21 @@ class VisaoGeral(Pagina):
 class Mapa(Pagina):
     def __init__(self, estado):
         super().__init__(estado)
-        ctl = QHBoxLayout()
-        ctl.setSpacing(12)
-        ctl.addWidget(rotulo("Produto", quebra=False))
+        ctl_box = QWidget()
+        ctl = Fluxo(ctl_box, espaco_h=24)
         self.c_prod = QComboBox()
         for p in SATELITES:
             self.c_prod.addItem(p, p)
         self.c_prod.currentIndexChanged.connect(lambda i: estado.alterar(mapa_produto=self.c_prod.itemData(i)))
-        ctl.addWidget(self.c_prod)
-        ctl.addSpacing(12)
-        ctl.addWidget(rotulo("Mostrar", quebra=False))
+        ctl.addWidget(grupo(rotulo("Produto", quebra=False), self.c_prod, espaco=12))
         self.seg, self.seg_botoes = segmentado([("media", "Média 2001–2020"), ("tendencia", "Tendência (Sen)")], "media",
                                                lambda m: estado.alterar(mapa_modo=m))
-        ctl.addWidget(self.seg)
-        ctl.addSpacing(12)
+        ctl.addWidget(grupo(rotulo("Mostrar", quebra=False), self.seg, espaco=12))
         self.chk_postos = QCheckBox("Mostrar postos")
         self.chk_postos.toggled.connect(lambda v: estado.alterar(mapa_postos=v))
         ctl.addWidget(self.chk_postos)
-        ctl.addStretch(1)
-        self.v.addLayout(ctl)
-        linha = QHBoxLayout()
-        linha.setSpacing(12)
+        self.v.addWidget(ctl_box)
+        linha = LinhaResponsiva(900)
         self.c_mapa = Cartao("Chuva média anual, 2001–2020", "Média dos totais anuais em cada UGRHI. Clique numa UGRHI para escolhê-la; clique de novo para voltar ao Estado.")
         self.mapa = MapaUGRHI(estado.base.regioes)
         self.mapa.clicado.connect(lambda s: estado.alterar(regiao="SP" if estado.regiao == s else s))
@@ -251,14 +256,13 @@ class Mapa(Pagina):
         self.leg_box, self.leg_lay = self.caixa()
         self.c_mapa.add(self.leg_box)
         self.c_rank = Cartao("Ranking das UGRHIs")
-        self.c_rank.setFixedWidth(380)
         self.rank = Ranking()
         self.rank.clicado.connect(lambda s: estado.alterar(regiao="SP" if estado.regiao == s else s))
         self.c_rank.add(self.rank)
         self.c_rank.corpo.addStretch(1)
-        linha.addWidget(self.c_mapa, 1, Qt.AlignTop)
-        linha.addWidget(self.c_rank, 0, Qt.AlignTop)
-        self.v.addLayout(linha)
+        linha.add(self.c_mapa, 1)
+        linha.add(self.c_rank, 0, largura_fixa=380)
+        self.v.addWidget(linha)
         self.v.addStretch(1)
 
     def atualizar(self):
@@ -320,9 +324,9 @@ class Series(Pagina):
         ctl2.addWidget(rotulo("Ano", quebra=False))
         ctl2.addWidget(self.s_ano)
         ctl2.addSpacing(20)
-        self.totais = rotulo("", secundario=True, quebra=False)
-        ctl2.addWidget(self.totais)
-        ctl2.addStretch(1)
+        self.totais = rotulo("", secundario=True)
+        self.totais.setTextFormat(Qt.RichText)
+        ctl2.addWidget(self.totais, 1)
         self.c_dia.add(ctl2)
         self.g_dia = GraficoLinhas(300)
         self.c_dia.add(self.g_dia)
@@ -366,7 +370,7 @@ class Series(Pagina):
             if vals:
                 series_d[p] = serie
                 totais.append(f"{bolinha(p)} {NOME_PRODUTO[p]}: {num(sum(vals), 0)} mm")
-        self.totais.setText("&nbsp;&nbsp;&nbsp;".join(totais))
+        self.totais.setText("&nbsp;&nbsp;&nbsp; ".join(t.replace(" ", "&nbsp;") for t in totais))
         self.totais.setTextFormat(Qt.RichText)
         ticks_d = [(dt.date(ano, m, 1) - ini).days + 1 for m in range(1, 13)]
         self.g_dia.definir(series_d, ticks_d, rotulo_x=lambda d: MESES[(ini + dt.timedelta(days=d - 1)).month - 1],
@@ -386,8 +390,8 @@ class Extremos(Pagina):
         super().__init__(estado)
         c = Cartao("Parâmetros", "Os padrões são os do RClimDex: período-base 1981–2010, dia úmido com 1 mm ou mais e ano com "
                                  "no máximo 15 dias sem dado. Produtos que começam depois de 2010 usam como base toda a série disponível.")
-        ctl = QHBoxLayout()
-        ctl.setSpacing(10)
+        ctl_box = QWidget()
+        ctl = Fluxo(ctl_box)
         self.b_ini, self.b_fim, self.nn = QSpinBox(), QSpinBox(), QSpinBox()
         self.b_ini.setRange(1980, 2020)
         self.b_fim.setRange(1985, 2026)
@@ -403,23 +407,14 @@ class Extremos(Pagina):
         self.nn.setSingleStep(5)
         self.nn.setSuffix(" mm")
         self.cruza = QCheckBox("CDD e CWD atravessam o ano")
-        ctl.addWidget(rotulo("Período-base", quebra=False))
-        ctl.addWidget(self.b_ini)
-        ctl.addWidget(rotulo("a", quebra=False))
-        ctl.addWidget(self.b_fim)
-        ctl.addSpacing(14)
-        ctl.addWidget(rotulo("Dia úmido", quebra=False))
-        ctl.addWidget(self.limiar)
-        ctl.addSpacing(14)
-        ctl.addWidget(rotulo("Limiar do Rnnmm", quebra=False))
-        ctl.addWidget(self.nn)
-        ctl.addSpacing(14)
+        ctl.addWidget(grupo(rotulo("Período-base", quebra=False), self.b_ini, rotulo("a", quebra=False), self.b_fim))
+        ctl.addWidget(grupo(rotulo("Dia úmido", quebra=False), self.limiar))
+        ctl.addWidget(grupo(rotulo("Limiar do Rnnmm", quebra=False), self.nn))
         ctl.addWidget(self.cruza)
-        ctl.addStretch(1)
         self.padrao = QPushButton("Padrão do RClimDex")
         self.padrao.clicked.connect(lambda: estado.alterar(parametros=Parametros()))
         ctl.addWidget(self.padrao)
-        c.add(ctl)
+        c.add(ctl_box)
         self.v.addWidget(c)
 
         def novo_parametro(**kw):
@@ -512,8 +507,8 @@ class Extremos(Pagina):
                            sinal(t.ols_por_decada if t else NAN, 2), p_texto(t.p_ols if t else NAN),
                            f"{num(r.p95, 1)} mm", f"{num(r.p99, 1)} mm", f"{r.base_usada[0]}–{r.base_usada[1]}"])
         limpar_layout(self.tend_lay)
-        self.tend_lay.addWidget(Grade(["Produto", "Período", "Anos", "Sen/década", "p (MK)", "Linear/década", "p (linear)", "P95", "P99", "Base"],
-                                      linhas, direita={2, 3, 4, 5, 6, 7, 8}))
+        self.tend_lay.addWidget(RolagemLateral(Grade(["Produto", "Período", "Anos", "Sen/década", "p (MK)", "Linear/década", "p (linear)",
+                                                      "P95", "P99", "Base"], linhas, direita={2, 3, 4, 5, 6, 7, 8})))
 
 
 # ======================================================================= 5. Validação
@@ -569,7 +564,8 @@ class Validacao(Pagina):
                            sinal(b.mediana_validacao(p, reg, "viesPct")[0], 1), num(b.mediana_validacao(p, reg, "kge")[0], 2),
                            num(b.mediana_validacao(p, reg, "csi")[0], 2)])
         limpar_layout(self.med_lay)
-        self.med_lay.addWidget(Grade(["Produto", "Postos", "r diário", "r mensal", "Viés (%)", "KGE", "CSI"], linhas, direita={1, 2, 3, 4, 5, 6}))
+        self.med_lay.addWidget(RolagemLateral(Grade(["Produto", "Postos", "r diário", "r mensal", "Viés (%)", "KGE", "CSI"], linhas,
+                                                    direita={1, 2, 3, 4, 5, 6})))
 
 
 # ======================================================================= 6. Postos
@@ -676,18 +672,21 @@ class Produtos(Pagina):
         c = Cartao("Produtos de satélite", "A tabela pedida, com a versão de cada produto usada aqui e o período baixado.")
         linhas = [[f"{bolinha(p['produto'])} <b>{p['produto']}</b>", p["sensor"], p["serie"], p["resolucao"], p["foco"], p["versao"], p["periodo"]]
                   for p in b.produtos]
-        c.add(Grade(["Produto", "Tipo de sensor principal", "Série histórica", "Resolução espacial", "Foco principal", "Versão usada", "Período baixado"], linhas))
+        c.add(RolagemLateral(Grade(["Produto", "Tipo de sensor principal", "Série histórica", "Resolução espacial", "Foco principal",
+                                    "Versão usada", "Período baixado"], linhas)))
         self.v.addWidget(c)
-        linha = QHBoxLayout()
-        linha.setSpacing(12)
+        linha = LinhaResponsiva(900)
         cb = Cartao("Bases de dados")
         for f in b.fontes:
             l = rotulo(f"<a href='{f['endereco']}'>{f['base']}</a><br><span style='font-size:8.5pt'>{f['grupo']} · {f['descricao']}</span>")
             l.setOpenExternalLinks(True)
             cb.add(l)
         cb.corpo.addStretch(1)
-        linha.addWidget(cb, 1)
-        col = QVBoxLayout()
+        linha.add(cb, 1)
+        coluna = QWidget()
+        col = QVBoxLayout(coluna)
+        col.setContentsMargins(0, 0, 0, 0)
+        col.setSpacing(12)
         ca = Cartao("Arquivos para baixar", "No GitHub. O Excel abre no Excel e no LibreOffice.")
         for titulo, caminho in ARQUIVOS:
             l = rotulo(f"<a href='{REPOSITORIO}{caminho}'>{titulo}</a>")
@@ -707,8 +706,8 @@ class Produtos(Pagina):
             cm.add(rotulo(t))
         col.addWidget(cm)
         col.addStretch(1)
-        linha.addLayout(col, 1)
-        self.v.addLayout(linha)
+        linha.add(coluna, 1)
+        self.v.addWidget(linha)
         self.v.addStretch(1)
 
 

@@ -6,12 +6,12 @@ import re
 import textwrap
 
 from PySide6.QtCharts import QCategoryAxis, QChart, QChartView, QLineSeries, QScatterSeries, QValueAxis
-from PySide6.QtCore import QLocale, QMargins, QPointF, QRectF, Qt, Signal
+from PySide6.QtCore import QLocale, QMargins, QPoint, QPointF, QRect, QRectF, QSize, Qt, Signal
 from PySide6.QtGui import QBrush, QColor, QFont, QLinearGradient, QPainter, QPainterPath, QPen
-from PySide6.QtWidgets import (QFrame, QGraphicsLineItem, QGridLayout, QHBoxLayout, QLabel, QSizePolicy, QToolTip,
-                               QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QBoxLayout, QFrame, QGraphicsLineItem, QGridLayout, QHBoxLayout, QLabel, QLayout, QScrollArea,
+                               QSizePolicy, QToolTip, QVBoxLayout, QWidget)
 
-from .calculos import finito, num, sinal
+from .calculos import finito, num
 from .dados import NOME_PRODUTO
 from .tema import T, cor_produto, escuro, fonte_titulo
 
@@ -115,17 +115,154 @@ class Cabecalho(QWidget):
         v.addWidget(rotulo(subtitulo, secundario=True))
 
 
-class Legenda(QWidget):
-    """Legenda dos produtos (bolinha colorida + nome), como nos gráficos do Mac."""
+class Legenda(QLabel):
+    """Legenda dos produtos (bolinha colorida + nome), que quebra linha quando falta espaço."""
 
     def __init__(self, produtos: list):
+        itens = [f"{bolinha(p)}&nbsp;{NOME_PRODUTO[p].replace(' ', '&nbsp;')}" for p in produtos]
+        super().__init__("&nbsp;&nbsp;&nbsp; ".join(itens))
+        self.setTextFormat(Qt.RichText)
+        self.setWordWrap(True)
+        self.setObjectName("secundario")
+
+
+class LinhaResponsiva(QWidget):
+    """Blocos lado a lado que viram uma coluna quando a largura fica abaixo do limite."""
+
+    def __init__(self, limite: int = 1000, espaco: int = 12):
         super().__init__()
-        h = QHBoxLayout(self)
-        h.setContentsMargins(0, 0, 0, 0)
-        h.setSpacing(14)
-        for p in produtos:
-            h.addWidget(rotulo(f"{bolinha(p)} {NOME_PRODUTO[p]}", secundario=True, quebra=False))
-        h.addStretch(1)
+        self.limite = limite
+        self.caixa = QBoxLayout(QBoxLayout.LeftToRight, self)
+        self.caixa.setContentsMargins(0, 0, 0, 0)
+        self.caixa.setSpacing(espaco)
+        self.fixos = []
+
+    def add(self, w, esticar: int = 1, largura_fixa: int | None = None) -> None:
+        self.caixa.addWidget(w, esticar)
+        self.fixos.append((w, largura_fixa))
+        self._ajustar(self.width() or 2000)
+
+    def _ajustar(self, largura: int) -> None:
+        estreito = largura < self.limite
+        self.caixa.setDirection(QBoxLayout.TopToBottom if estreito else QBoxLayout.LeftToRight)
+        for w, fixa in self.fixos:
+            if fixa:
+                if estreito:
+                    w.setMinimumWidth(0)
+                    w.setMaximumWidth(16777215)
+                else:
+                    w.setFixedWidth(fixa)
+
+    def resizeEvent(self, ev):
+        self._ajustar(ev.size().width())
+        super().resizeEvent(ev)
+
+
+class Fluxo(QLayout):
+    """Controles em fila que passam para a linha de baixo quando falta largura (como texto)."""
+
+    def __init__(self, pai=None, espaco_h: int = 18, espaco_v: int = 8):
+        super().__init__(pai)
+        self._itens = []
+        self._eh, self._ev = espaco_h, espaco_v
+        self.setContentsMargins(0, 0, 0, 0)
+
+    def addItem(self, item):
+        self._itens.append(item)
+
+    def count(self):
+        return len(self._itens)
+
+    def itemAt(self, i):
+        return self._itens[i] if 0 <= i < len(self._itens) else None
+
+    def takeAt(self, i):
+        return self._itens.pop(i) if 0 <= i < len(self._itens) else None
+
+    def expandingDirections(self):
+        return Qt.Orientation(0)
+
+    def hasHeightForWidth(self):
+        return True
+
+    def heightForWidth(self, largura):
+        return self._arrumar(QRect(0, 0, largura, 0), aplicar=False)
+
+    def setGeometry(self, r):
+        super().setGeometry(r)
+        self._arrumar(r, aplicar=True)
+
+    def sizeHint(self):
+        return self.minimumSize()
+
+    def minimumSize(self):
+        s = QSize()
+        for it in self._itens:
+            s = s.expandedTo(it.minimumSize())
+        return s
+
+    def _arrumar(self, r, aplicar: bool) -> int:
+        linhas, atual, x = [], [], 0
+        for it in self._itens:
+            w = it.sizeHint().width()
+            if atual and x + w > r.width():
+                linhas.append(atual)
+                atual, x = [], 0
+            atual.append(it)
+            x += w + self._eh
+        if atual:
+            linhas.append(atual)
+        y = r.y()
+        for k, linha in enumerate(linhas):
+            alt = max(it.sizeHint().height() for it in linha)
+            if aplicar:
+                x = r.x()
+                for it in linha:
+                    sh = it.sizeHint()
+                    it.setGeometry(QRect(QPoint(x, y + (alt - sh.height()) // 2), sh))
+                    x += sh.width() + self._eh
+            y += alt + (self._ev if k < len(linhas) - 1 else 0)
+        return y - r.y()
+
+
+def grupo(*widgets, espaco: int = 6) -> QWidget:
+    """Junta rótulo e campo num bloco só, para que quebrem de linha juntos."""
+    w = QWidget()
+    h = QHBoxLayout(w)
+    h.setContentsMargins(0, 0, 0, 0)
+    h.setSpacing(espaco)
+    for x in widgets:
+        h.addWidget(x)
+    return w
+
+
+class RolagemLateral(QScrollArea):
+    """Deixa um bloco largo (uma tabela) rolar para o lado dentro do cartão, sem alargar a página."""
+
+    def __init__(self, conteudo: QWidget):
+        super().__init__()
+        self.setObjectName("rolagemLateral")
+        self.setWidget(conteudo)
+        self.setWidgetResizable(True)
+        self.setFrameShape(QFrame.NoFrame)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        self.setMinimumWidth(120)
+        self.setStyleSheet("QScrollArea#rolagemLateral, QScrollArea#rolagemLateral > QWidget > QWidget { background: transparent; }")
+        self.viewport().setAutoFillBackground(False)
+        self._altura(2000)
+
+    def _altura(self, largura: int) -> None:
+        conteudo = self.widget()
+        h = conteudo.sizeHint().height()
+        if conteudo.minimumSizeHint().width() > largura:
+            h += self.horizontalScrollBar().sizeHint().height() + 2
+        self.setFixedHeight(h)
+
+    def resizeEvent(self, ev):
+        self._altura(ev.size().width())
+        super().resizeEvent(ev)
 
 
 def segmentos(serie: list, passo: int = 1) -> list:

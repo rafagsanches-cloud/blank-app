@@ -2,7 +2,7 @@
 
 Rodar a partir do código:   python windows/ChuvaSP.py
 Argumentos opcionais:       --aba <nome> --regiao <sigla> --tema claro|escuro
-Capturas de tela (teste):   python windows/ChuvaSP.py --capturas <pasta> [--tema escuro]
+Capturas de tela (teste):   python windows/ChuvaSP.py --capturas <pasta> [--tema escuro] [--tamanho 1280x800]
 """
 from __future__ import annotations
 
@@ -72,6 +72,10 @@ def main() -> int:
     if reg in base.por_sigla:
         estado.regiao = reg
     janela = Janela(estado)
+    tamanho = argumento("--tamanho")
+    if tamanho and "x" in tamanho:
+        largura, altura = (int(v) for v in tamanho.split("x"))
+        janela.resize(largura, altura)
     janela.show()
     pasta = argumento("--capturas")
     if pasta:

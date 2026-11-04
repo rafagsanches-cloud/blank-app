@@ -6,7 +6,7 @@ from pathlib import Path
 
 from PySide6.QtCore import QSize, Qt, QTimer
 from PySide6.QtGui import QAction, QGuiApplication, QIcon, QKeySequence
-from PySide6.QtWidgets import (QApplication, QComboBox, QFileDialog, QHBoxLayout, QLabel, QListWidget, QListWidgetItem,
+from PySide6.QtWidgets import (QApplication, QComboBox, QFileDialog, QHBoxLayout, QListWidget, QListWidgetItem,
                                QMainWindow, QMenu, QMessageBox, QSizePolicy, QStackedWidget, QToolBar, QToolButton,
                                QVBoxLayout, QWidget)
 
@@ -27,7 +27,7 @@ class Janela(QMainWindow):
         if ICONE_APP.exists():
             self.setWindowIcon(QIcon(str(ICONE_APP)))
         self.resize(1400, 900)
-        self.setMinimumSize(1080, 700)
+        self.setMinimumSize(900, 600)
         self._pendente = False
         self._sujas = set()
 
