@@ -20,7 +20,11 @@ jobs:
       - run: echo "Actions ativo neste repositório"
 
   construir:
-    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        imagem: [macos-26, macos-14]
+    runs-on: ${{ matrix.imagem }}
     steps:
       - uses: actions/checkout@v4
 
@@ -54,7 +58,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Chuva-SP-macOS
+          name: Chuva-SP-macOS-${{ matrix.imagem }}
           path: |
             macos/build/Chuva-SP-macOS.zip
             capturas/*.png
@@ -64,6 +68,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # as duas imagens compilam o mesmo código; publica só a primeira que terminar
+          if gh release view app-macos --json targetCommitish -q .targetCommitish 2>/dev/null | grep -q "$GITHUB_SHA"; then
+            echo "versão deste commit já publicada"; exit 0
+          fi
           gh release delete app-macos --yes --cleanup-tag || true
           gh release create app-macos --prerelease --target "$GITHUB_SHA" \
             --title "Chuva SP para macOS" --notes-file macos/NOTAS_VERSAO.md \
