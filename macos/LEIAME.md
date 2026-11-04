@@ -22,13 +22,15 @@ Os índices do app são conferidos automaticamente contra o ClimdexSP em R (`mac
 
 ## Instalar a versão pronta
 
-1. Baixe `Chuva-SP-macOS.zip` na página de versões do repositório (versão "Chuva SP para macOS") e abra o arquivo.
+1. Baixe `Chuva-SP-macOS.zip` em <https://github.com/rafagsanches-cloud/blank-app/releases/tag/app-macos> e abra o arquivo (o Finder descompacta).
 2. Arraste `Chuva SP.app` para a pasta Aplicativos.
 3. Na primeira vez, o macOS avisa que não pode verificar o desenvolvedor, porque o app não é assinado por uma conta paga da Apple. Abra **Ajustes do Sistema > Privacidade e Segurança**, role até o aviso sobre "Chuva SP" e clique em **Abrir Mesmo Assim**. Também resolve, no Terminal:
 
    ```bash
    xattr -dr com.apple.quarantine "/Applications/Chuva SP.app"
    ```
+
+A página da versão também mostra imagens de cada tela, geradas automaticamente a cada compilação.
 
 ## Compilar no seu Mac
 

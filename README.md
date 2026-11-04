@@ -10,7 +10,7 @@ Os arquivos já processados estão em `saidas/` e `dados/`, prontos para uso.
 
 ## App para Mac
 
-`macos/` tem o **Chuva SP**, app nativo para macOS (SwiftUI e Swift Charts, Apple Silicon e Intel, macOS 14 ou mais novo). Ele traz os mesmos dados deste repositório dentro dele e funciona sem internet: visão geral, mapa clicável das UGRHIs, séries mensais e diárias, índices ETCCDI recalculáveis como no RClimDex, validação satélite × postos e lista de postos. Instalação e compilação: [`macos/LEIAME.md`](macos/LEIAME.md).
+`macos/` tem o **Chuva SP**, app nativo para macOS (SwiftUI e Swift Charts, Apple Silicon e Intel, macOS 14 ou mais novo). Ele traz os mesmos dados deste repositório dentro dele e funciona sem internet: visão geral, mapa clicável das UGRHIs, séries mensais e diárias, índices ETCCDI recalculáveis como no RClimDex, validação satélite × postos e lista de postos. Download: [versão "Chuva SP para macOS"](https://github.com/rafagsanches-cloud/blank-app/releases/tag/app-macos). Instalação e compilação: [`macos/LEIAME.md`](macos/LEIAME.md).
 
 ## Arquivos prontos
 
