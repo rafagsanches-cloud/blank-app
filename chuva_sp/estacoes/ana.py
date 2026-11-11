@@ -194,6 +194,8 @@ REPETICAO_DIAS = 3
 ESPACIAL_MIN_MM = 100.0      # valores altos comparados com os vizinhos
 ESPACIAL_RAIO_KM = 50.0
 ESPACIAL_RAZAO = 0.10        # removido se todos os vizinhos (dia anterior a seguinte) ficaram abaixo de 10% do valor
+ESPACIAL_ALTO_MM = 200.0     # para valores muito altos a exigência é maior:
+ESPACIAL_RAZAO_ALTO = 0.30   # removido se nenhum vizinho chegou a 30% do valor
 ESPACIAL_MIN_VIZINHOS = 3
 
 
@@ -203,55 +205,62 @@ def controle_qualidade(diario: pd.DataFrame, lat: pd.Series, lon: pd.Series) -> 
     1. Limite físico: valor acima de 700 mm.
     2. Repetição: 3 ou mais dias seguidos com o mesmo valor de 5 mm ou mais.
     3. Teste espacial: valor de 100 mm ou mais quando pelo menos 3 postos num raio de 50 km, do dia
-       anterior ao seguinte, registraram todos menos de 10% dele.
+       anterior ao seguinte, registraram todos menos de 10% dele (menos de 30% para valores de 200 mm ou mais).
     """
     import numpy as np
 
-    d = diario.astype("float64").copy()
+    cols = list(diario.columns)
+    datas = diario.index
+    a = diario.to_numpy(dtype="float64", copy=True)
     removidos = []
 
-    def tirar(mascara: pd.DataFrame, motivo: str) -> None:
-        pilha = d.where(mascara).stack()
-        for (data, est), v in pilha.items():
-            removidos.append((est, data, float(v), motivo))
-        d[mascara] = np.nan
+    def tirar(mascara: np.ndarray, motivo: str) -> None:
+        ii, jj = np.nonzero(mascara)
+        removidos.extend((cols[j], datas[i], float(a[i, j]), motivo) for i, j in zip(ii, jj))
+        a[mascara] = np.nan
 
-    tirar(d > LIMITE_FISICO_MM, f"acima de {LIMITE_FISICO_MM:.0f} mm")
+    with np.errstate(invalid="ignore"):
+        tirar(a > LIMITE_FISICO_MM, f"acima de {LIMITE_FISICO_MM:.0f} mm")
 
-    rep = pd.DataFrame(False, index=d.index, columns=d.columns)
-    for c in d.columns:
-        s = d[c]
-        cand = s >= REPETICAO_MIN_MM
-        if not cand.any():
-            continue
-        grupo = (s != s.shift()).cumsum()
-        tam = s.groupby(grupo).transform("size")
-        rep[c] = cand & (tam >= REPETICAO_DIAS)
-    tirar(rep, f"mesmo valor em {REPETICAO_DIAS} ou mais dias seguidos")
+        # repetição: comprimento de cada sequência de valores iguais (NaN quebra a sequência)
+        igual = np.zeros(a.shape, bool)
+        igual[1:] = a[1:] == a[:-1]
+        rep = np.zeros(a.shape, bool)
+        for j in range(a.shape[1]):
+            grupo = np.cumsum(~igual[:, j])
+            tam = np.bincount(grupo)[grupo]
+            rep[:, j] = (tam >= REPETICAO_DIAS) & (a[:, j] >= REPETICAO_MIN_MM)
+        tirar(rep, f"mesmo valor em {REPETICAO_DIAS} ou mais dias seguidos")
 
-    cols = list(d.columns)
-    la = np.radians(lat.reindex(cols).to_numpy(float))
-    lo = np.radians(lon.reindex(cols).to_numpy(float))
-    dist = 6371.0 * 2 * np.arcsin(np.sqrt(np.sin((la[:, None] - la[None, :]) / 2) ** 2
-                                          + np.cos(la[:, None]) * np.cos(la[None, :]) * np.sin((lo[:, None] - lo[None, :]) / 2) ** 2))
-    vizinhos = {c: [cols[j] for j in np.where((dist[i] <= ESPACIAL_RAIO_KM) & (dist[i] > 0))[0]] for i, c in enumerate(cols)}
-    jan = d.rolling(3, center=True, min_periods=1).max()
-    jan_n = d.notna().astype(int).rolling(3, center=True, min_periods=1).max()
-    esp = pd.DataFrame(False, index=d.index, columns=d.columns)
-    for (data, est), v in d.where(d >= ESPACIAL_MIN_MM).stack().items():
-        viz = vizinhos.get(est, [])
-        if len(viz) < ESPACIAL_MIN_VIZINHOS:
-            continue
-        com_dado = jan_n.loc[data, viz]
-        if int(com_dado.sum()) < ESPACIAL_MIN_VIZINHOS:
-            continue
-        if float(jan.loc[data, viz].max()) < ESPACIAL_RAZAO * v:
-            esp.at[data, est] = True
-    tirar(esp, f"vizinhos num raio de {ESPACIAL_RAIO_KM:.0f} km abaixo de {ESPACIAL_RAZAO:.0%} do valor")
+        # teste espacial
+        la = np.radians(lat.reindex(cols).to_numpy(float))
+        lo = np.radians(lon.reindex(cols).to_numpy(float))
+        dist = 6371.0 * 2 * np.arcsin(np.sqrt(np.sin((la[:, None] - la[None, :]) / 2) ** 2
+                                              + np.cos(la[:, None]) * np.cos(la[None, :]) * np.sin((lo[:, None] - lo[None, :]) / 2) ** 2))
+        vizinhos = [np.where((dist[j] <= ESPACIAL_RAIO_KM) & (dist[j] > 0))[0] for j in range(len(cols))]
+        tem = np.isfinite(a)
+        z = np.where(tem, a, -np.inf)
+        jan = z.copy()
+        jan[1:] = np.maximum(jan[1:], z[:-1])
+        jan[:-1] = np.maximum(jan[:-1], z[1:])
+        jan_n = tem.copy()
+        jan_n[1:] |= tem[:-1]
+        jan_n[:-1] |= tem[1:]
+        esp = np.zeros(a.shape, bool)
+        for i, j in zip(*np.nonzero(a >= ESPACIAL_MIN_MM)):
+            viz = vizinhos[j]
+            if len(viz) < ESPACIAL_MIN_VIZINHOS or int(jan_n[i, viz].sum()) < ESPACIAL_MIN_VIZINHOS:
+                continue
+            razao = ESPACIAL_RAZAO_ALTO if a[i, j] >= ESPACIAL_ALTO_MM else ESPACIAL_RAZAO
+            if jan[i, viz].max() < razao * a[i, j]:
+                esp[i, j] = True
+        tirar(esp, f"vizinhos num raio de {ESPACIAL_RAIO_KM:.0f} km bem abaixo do valor "
+                   f"(menos de {ESPACIAL_RAZAO:.0%}; {ESPACIAL_RAZAO_ALTO:.0%} se o valor passa de {ESPACIAL_ALTO_MM:.0f} mm)")
 
     tab = pd.DataFrame(removidos, columns=["estacao", "data", "chuva_mm", "motivo"]).sort_values(["estacao", "data"])
     log.info("controle de qualidade: %d valores removidos (%s)", len(tab), tab.motivo.value_counts().to_dict())
-    return d.astype("float32"), tab.reset_index(drop=True)
+    limpo = pd.DataFrame(a.astype("float32"), index=datas, columns=diario.columns)
+    return limpo, tab.reset_index(drop=True)
 
 
 # ---------------------------------------------------------------- organização para o app e o Excel

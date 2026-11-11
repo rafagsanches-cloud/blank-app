@@ -118,7 +118,8 @@ def leia_me(r: dict) -> list[tuple[str, str]]:
                                   "acima do maior valor já medido no Brasil (cerca de 683 mm em 24 h, Bertioga, 2023); (2) o mesmo valor de "
                                   "5 mm ou mais em 3 ou mais dias seguidos (sensor travado ou código de falta, como 99,9); (3) valor de 100 mm "
                                   "ou mais quando pelo menos 3 postos num raio de 50 km, do dia anterior ao seguinte, registraram todos menos "
-                                  f"de 10% dele. Foram removidos {len(r['removidos'])} valores diários."),
+                                  "de 10% dele (menos de 30% se o valor passa de 200 mm). Eventos fortes da Serra do Mar, com vizinhos "
+                                  f"também altos, são mantidos. Foram removidos {len(r['removidos'])} valores diários."),
         ("Médias por UGRHI", "Média aritmética diária dos postos da UGRHI, só nos dias com pelo menos 3 postos (9 no Estado); "
                              "mês e ano seguem as mesmas regras de falta."),
         ("UGRHI", f"Pelo ponto da estação nos limites das 22 UGRHIs. Postos com coordenada arredondada no inventário ou na divisa "
