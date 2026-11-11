@@ -81,8 +81,7 @@ def main() -> None:
     postos, mat_m, mat_a = [], [], []
     for k, r in enumerate(inv.itertuples()):
         postos.append({
-            "id": r.id, "nome": str(r.nome).title() if str(r.nome).isupper() else str(r.nome),
-            "municipio": str(r.municipio).title(), "operadora": str(r.operadora), "sigla": r.ugrhi,
+            "id": r.id, "nome": str(r.nome), "municipio": str(r.municipio), "operadora": str(r.operadora), "sigla": r.ugrhi,
             "lat": round(float(r.lat), 4), "lon": round(float(r.lon), 4), "altitude": limpo(r.altitude, 0),
             "inicio": str(r.primeiro_dia)[:10], "fim": str(r.ultimo_dia)[:10], "dias": int(r.dias_validos_desde_1980),
             "anosCompletos": int(r.anos_completos), "mediaAnual": limpo(r.media_anual_mm, 0),
