@@ -24,6 +24,9 @@ Os arquivos já processados estão em `saidas/` e `dados/`, prontos para uso.
 | `saidas/Chuva_SP_horario_CMORPH_1998-2026.xlsx` | CMORPH horário, 22 UGRHIs + Estado |
 | `saidas/Chuva_SP_horario_IMERG_1998-2026.xlsx` | IMERG horário, 22 UGRHIs + Estado |
 | `saidas/climdexsp/` | Resultados do ClimdexSP (índices, tendências, QC, gráficos do Estado) |
+| `saidas/ana/Chuva_ANA_SP_1980-2026_mensal_anual.xlsx` | Postos da ANA em todo o Estado: inventário, chuva mensal e anual de cada posto, dias com dado, médias por UGRHI |
+| `saidas/ana/diario/` | Chuva diária de cada posto da ANA, um Excel por UGRHI |
+| `saidas/ana/Chuva_ANA_SP_1980-2026_csv.zip` | As mesmas tabelas da ANA em CSV (ponto e vírgula, vírgula decimal), com o diário do Estado num só arquivo |
 | `dados/ugrhi/UGRHI_SP_shapefile.zip` | Shapefile das 22 UGRHIs (SIRGAS/WGS84 geográfico) |
 | `dados/ugrhi/ugrhi_sp.rds` | Os mesmos limites como objeto `sf` do R |
 | `dados/ugrhi/UGRHI_SP.gpkg` | GeoPackage |
@@ -85,6 +88,7 @@ Em novembro de 2026 as séries da ANA entraram no projeto. O inventário do web 
 - As regras de falta são as mesmas do resto do projeto, e a média de cada UGRHI exige pelo menos 3 postos no dia (9 no Estado).
 - Arquivos: `dados/processados/ANA_*` (diário, mensal e anual por posto; média por UGRHI; inventário; postos por ano) e `validacao_sat_x_ana.csv` (cada satélite contra o pixel de cada posto da ANA).
 - Para baixar de novo: `python -m chuva_sp.estacoes.ana` (cerca de 15 minutos).
+- Planilhas de todo o Estado (Excel e CSV, em `saidas/ana`): `python -m chuva_sp.estacoes.ana_planilhas`.
 
 As estações automáticas (telemétricas) também estão no inventário, mas o web service antigo não devolveu dados de 15 minutos para nenhuma das estações testadas. Esses dados ficam na API nova da ANA, que exige cadastro com identificador e senha ([manual do SNIRH](https://www.snirh.gov.br/dadoshidrometereologicos/manual)).
 
