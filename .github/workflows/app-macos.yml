@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: app-macos
+  group: app-macos-26
   cancel-in-progress: true
 
 jobs:
@@ -25,6 +25,7 @@ jobs:
       matrix:
         imagem: [macos-26]
     runs-on: ${{ matrix.imagem }}
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -60,6 +61,8 @@ jobs:
 
       - name: Guardar o app e as capturas
         if: always()
+        timeout-minutes: 5
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: Chuva-SP-macOS-${{ matrix.imagem }}
