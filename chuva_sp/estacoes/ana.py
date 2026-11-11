@@ -187,6 +187,73 @@ def baixar_todas_sp(pasta_saida: Path | None = None, workers: int = 8) -> tuple[
     return inv, larga
 
 
+# ---------------------------------------------------------------- controle de qualidade
+LIMITE_FISICO_MM = 700.0     # maior chuva em 24 h já medida no Brasil: cerca de 683 mm (Bertioga, fev/2023)
+REPETICAO_MIN_MM = 5.0       # valor repetido em 3 ou mais dias seguidos (sensor travado, código de falta como 99,9)
+REPETICAO_DIAS = 3
+ESPACIAL_MIN_MM = 100.0      # valores altos comparados com os vizinhos
+ESPACIAL_RAIO_KM = 50.0
+ESPACIAL_RAZAO = 0.10        # removido se todos os vizinhos (dia anterior a seguinte) ficaram abaixo de 10% do valor
+ESPACIAL_MIN_VIZINHOS = 3
+
+
+def controle_qualidade(diario: pd.DataFrame, lat: pd.Series, lon: pd.Series) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Remove erros grosseiros da chuva diária e devolve (série limpa, tabela dos valores removidos).
+
+    1. Limite físico: valor acima de 700 mm.
+    2. Repetição: 3 ou mais dias seguidos com o mesmo valor de 5 mm ou mais.
+    3. Teste espacial: valor de 100 mm ou mais quando pelo menos 3 postos num raio de 50 km, do dia
+       anterior ao seguinte, registraram todos menos de 10% dele.
+    """
+    import numpy as np
+
+    d = diario.astype("float64").copy()
+    removidos = []
+
+    def tirar(mascara: pd.DataFrame, motivo: str) -> None:
+        pilha = d.where(mascara).stack()
+        for (data, est), v in pilha.items():
+            removidos.append((est, data, float(v), motivo))
+        d[mascara] = np.nan
+
+    tirar(d > LIMITE_FISICO_MM, f"acima de {LIMITE_FISICO_MM:.0f} mm")
+
+    rep = pd.DataFrame(False, index=d.index, columns=d.columns)
+    for c in d.columns:
+        s = d[c]
+        cand = s >= REPETICAO_MIN_MM
+        if not cand.any():
+            continue
+        grupo = (s != s.shift()).cumsum()
+        tam = s.groupby(grupo).transform("size")
+        rep[c] = cand & (tam >= REPETICAO_DIAS)
+    tirar(rep, f"mesmo valor em {REPETICAO_DIAS} ou mais dias seguidos")
+
+    cols = list(d.columns)
+    la = np.radians(lat.reindex(cols).to_numpy(float))
+    lo = np.radians(lon.reindex(cols).to_numpy(float))
+    dist = 6371.0 * 2 * np.arcsin(np.sqrt(np.sin((la[:, None] - la[None, :]) / 2) ** 2
+                                          + np.cos(la[:, None]) * np.cos(la[None, :]) * np.sin((lo[:, None] - lo[None, :]) / 2) ** 2))
+    vizinhos = {c: [cols[j] for j in np.where((dist[i] <= ESPACIAL_RAIO_KM) & (dist[i] > 0))[0]] for i, c in enumerate(cols)}
+    jan = d.rolling(3, center=True, min_periods=1).max()
+    jan_n = d.notna().astype(int).rolling(3, center=True, min_periods=1).max()
+    esp = pd.DataFrame(False, index=d.index, columns=d.columns)
+    for (data, est), v in d.where(d >= ESPACIAL_MIN_MM).stack().items():
+        viz = vizinhos.get(est, [])
+        if len(viz) < ESPACIAL_MIN_VIZINHOS:
+            continue
+        com_dado = jan_n.loc[data, viz]
+        if int(com_dado.sum()) < ESPACIAL_MIN_VIZINHOS:
+            continue
+        if float(jan.loc[data, viz].max()) < ESPACIAL_RAZAO * v:
+            esp.at[data, est] = True
+    tirar(esp, f"vizinhos num raio de {ESPACIAL_RAIO_KM:.0f} km abaixo de {ESPACIAL_RAZAO:.0%} do valor")
+
+    tab = pd.DataFrame(removidos, columns=["estacao", "data", "chuva_mm", "motivo"]).sort_values(["estacao", "data"])
+    log.info("controle de qualidade: %d valores removidos (%s)", len(tab), tab.motivo.value_counts().to_dict())
+    return d.astype("float32"), tab.reset_index(drop=True)
+
+
 # ---------------------------------------------------------------- organização para o app e o Excel
 def processar_sp(min_dias: int = 365) -> dict:
     """Junta as séries baixadas (cache) em tabelas prontas: inventário, diário, mensal, anual,
@@ -222,6 +289,7 @@ def processar_sp(min_dias: int = 365) -> dict:
         "ugrhi": inv.ugrhi, "lat": num("Latitude"), "lon": num("Longitude"), "altitude": num("Altitude"),
         "operando": inv.Operando.eq("1"), "telemetrica": inv.TipoEstacaoTelemetrica.eq("1"),
     }).set_index("id").reindex(diario.columns).rename_axis("id").reset_index()
+    diario, removidos = controle_qualidade(diario, tab.set_index("id").lat, tab.set_index("id").lon)
     validos = diario.notna()
     tab["primeiro_dia"] = [diario.index[validos[c].values.argmax()].date() for c in tab.id]
     tab["ultimo_dia"] = [diario.index[len(diario) - 1 - validos[c].values[::-1].argmax()].date() for c in tab.id]
@@ -235,7 +303,7 @@ def processar_sp(min_dias: int = 365) -> dict:
 
     med = ag.media_postos_por_ugrhi(diario, tab)
     out = {
-        "inventario": tab, "diario": diario, "mensal": mensal, "anual": anual,
+        "inventario": tab, "diario": diario, "mensal": mensal, "anual": anual, "removidos": removidos,
         "contagem": ag.contagem_postos(diario, tab),
         "media_ugrhi": {"diario": med, "mensal": ag.diario_para_mensal(med), "anual": ag.diario_para_anual(med)},
     }
@@ -254,6 +322,7 @@ def salvar_processados_sp(res: dict) -> None:
         res["media_ugrhi"][k].to_parquet(P / f"ANA_MEDIA_{k}.parquet")
     res["contagem"].to_csv(P / "ANA_n_por_ano.csv")
     res["validacao"].to_csv(P / "validacao_sat_x_ana.csv", index=False)
+    res["removidos"].to_csv(P / "ANA_controle_qualidade.csv", index=False)
 
 
 def baixar_series_sp(workers: int = 6) -> pd.DataFrame:

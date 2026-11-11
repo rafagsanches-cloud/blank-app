@@ -24,6 +24,7 @@ from .. import agregacao as ag
 from .. import config, ugrhi
 from ..excel import Pasta
 from ..satelites import base
+from .ana import controle_qualidade
 
 log = logging.getLogger("chuva_sp")
 DESTINO = config.SAIDAS / "ana"
@@ -49,6 +50,8 @@ def montar() -> dict:
     diario = pd.DataFrame(series).sort_index()
     diario = diario.reindex(pd.date_range(config.DATA_INICIO, diario.index.max(), freq="D", name="data"))
     diario = diario[sorted(diario.columns, key=lambda c: (str(ws.at[c, "ugrhi"]) if pd.notna(ws.at[c, "ugrhi"]) else "ZZ", c))]
+    diario, removidos = controle_qualidade(diario, pd.to_numeric(ws.Latitude, errors="coerce"), pd.to_numeric(ws.Longitude, errors="coerce"))
+    diario = diario.loc[:, diario.notna().any()]
     mensal = ag.diario_para_mensal(diario)
     anual = ag.diario_para_anual(diario)
     anual = anual[anual.index <= fim.year]
@@ -87,8 +90,11 @@ def montar() -> dict:
     P = config.PROCESSADOS
     media = {k: pd.read_parquet(P / f"ANA_MEDIA_{k}.parquet") for k in ("diario", "mensal", "anual")}
     media["anual"] = media["anual"][media["anual"].index <= fim.year]
+    nomes_est = ws.Nome.str.strip()
+    removidos.insert(1, "nome", removidos.estacao.map(nomes_est))
+    removidos = removidos.rename(columns={"estacao": "codigo", "chuva_mm": "valor_removido_mm"})
     return {"inventario": inv, "diario": diario, "mensal": mensal, "anual": anual, "dias_mes": dias_mes,
-            "contagem": contagem, "media": media}
+            "contagem": contagem, "media": media, "removidos": removidos}
 
 
 def leia_me(r: dict) -> list[tuple[str, str]]:
@@ -108,6 +114,11 @@ def leia_me(r: dict) -> list[tuple[str, str]]:
         ("Faltas", "Dias em branco e dias marcados como acumulados (chuva de vários dias lançada num dia só) ficam vazios. "
                    "Mês: vazio se mais de 3 dias faltarem. Ano: vazio se mais de 15 dias faltarem (padrão RClimDex/ETCCDI). "
                    "A planilha Mensal_dias_com_dado traz o número de dias com dado em cada mês."),
+        ("Controle de qualidade", "Valores removidos (lista completa na planilha Controle_qualidade): (1) acima de 700 mm em um dia, "
+                                  "acima do maior valor já medido no Brasil (cerca de 683 mm em 24 h, Bertioga, 2023); (2) o mesmo valor de "
+                                  "5 mm ou mais em 3 ou mais dias seguidos (sensor travado ou código de falta, como 99,9); (3) valor de 100 mm "
+                                  "ou mais quando pelo menos 3 postos num raio de 50 km, do dia anterior ao seguinte, registraram todos menos "
+                                  f"de 10% dele. Foram removidos {len(r['removidos'])} valores diários."),
         ("Médias por UGRHI", "Média aritmética diária dos postos da UGRHI, só nos dias com pelo menos 3 postos (9 no Estado); "
                              "mês e ano seguem as mesmas regras de falta."),
         ("UGRHI", f"Pelo ponto da estação nos limites das 22 UGRHIs. Postos com coordenada arredondada no inventário ou na divisa "
@@ -154,6 +165,7 @@ def escrever_excel(r: dict) -> list[Path]:
         df.index.name = rot
         p.tabela(f"Media_UGRHI_{k.replace('diario', 'diaria')}", df, formatos={rot: fmt}, altura_cabecalho=45)
     p.tabela("Postos_por_ano", r["contagem"].rename(columns=lambda c: nomes.get(c, c)), formatos={"ano": "int"}, fmt_padrao="int")
+    p.tabela("Controle_qualidade", r["removidos"], formatos={"data": "data", "valor_removido_mm": "num"}, congelar=(1, 1))
     p.fechar()
     saidas.append(arq)
 
@@ -205,6 +217,7 @@ def escrever_csv(r: dict) -> Path:
                 df.index = df.index.strftime("%Y-%m")
             z.writestr(f"media_ugrhi_{k.replace('diario', 'diaria')}.csv", _csv(df, rot))
         z.writestr("postos_por_ano.csv", _csv(r["contagem"].rename(columns=lambda c: nomes.get(c, c)), "ano"))
+        z.writestr("controle_qualidade.csv", _csv(r["removidos"].set_index("codigo")))
     return arq
 
 
