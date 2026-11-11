@@ -1,0 +1,1284 @@
+estacao,data,chuva_mm,motivo
+02047001,1992-05-29,113.5999984741211,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02047005,1990-01-03,436.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02047005,2010-02-28,23.5,mesmo valor em 3 ou mais dias seguidos
+02047005,2010-03-01,23.5,mesmo valor em 3 ou mais dias seguidos
+02047005,2010-03-02,23.5,mesmo valor em 3 ou mais dias seguidos
+02047010,1998-12-04,38.5,mesmo valor em 3 ou mais dias seguidos
+02047010,1998-12-05,38.5,mesmo valor em 3 ou mais dias seguidos
+02047010,1998-12-06,38.5,mesmo valor em 3 ou mais dias seguidos
+02047018,2014-01-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02047018,2014-01-16,10.0,mesmo valor em 3 ou mais dias seguidos
+02047018,2014-01-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02047018,2017-11-02,30.0,mesmo valor em 3 ou mais dias seguidos
+02047018,2017-11-03,30.0,mesmo valor em 3 ou mais dias seguidos
+02047018,2017-11-04,30.0,mesmo valor em 3 ou mais dias seguidos
+02047020,2007-01-02,20.0,mesmo valor em 3 ou mais dias seguidos
+02047020,2007-01-03,20.0,mesmo valor em 3 ou mais dias seguidos
+02047020,2007-01-04,20.0,mesmo valor em 3 ou mais dias seguidos
+02047020,2008-12-22,28.0,mesmo valor em 3 ou mais dias seguidos
+02047020,2008-12-23,28.0,mesmo valor em 3 ou mais dias seguidos
+02047020,2008-12-24,28.0,mesmo valor em 3 ou mais dias seguidos
+02047020,2016-01-08,20.0,mesmo valor em 3 ou mais dias seguidos
+02047020,2016-01-09,20.0,mesmo valor em 3 ou mais dias seguidos
+02047020,2016-01-10,20.0,mesmo valor em 3 ou mais dias seguidos
+02047027,1981-01-13,17.0,mesmo valor em 3 ou mais dias seguidos
+02047027,1981-01-14,17.0,mesmo valor em 3 ou mais dias seguidos
+02047027,1981-01-15,17.0,mesmo valor em 3 ou mais dias seguidos
+02047060,2009-03-26,16.0,mesmo valor em 3 ou mais dias seguidos
+02047060,2009-03-27,16.0,mesmo valor em 3 ou mais dias seguidos
+02047060,2009-03-28,16.0,mesmo valor em 3 ou mais dias seguidos
+02047060,2009-03-29,16.0,mesmo valor em 3 ou mais dias seguidos
+02047060,2009-03-30,16.0,mesmo valor em 3 ou mais dias seguidos
+02047068,2009-10-22,240.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02047079,1983-07-18,21.0,mesmo valor em 3 ou mais dias seguidos
+02047079,1983-07-19,21.0,mesmo valor em 3 ou mais dias seguidos
+02047079,1983-07-20,21.0,mesmo valor em 3 ou mais dias seguidos
+02047080,2012-01-02,450.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02047101,1992-01-23,50.099998474121094,mesmo valor em 3 ou mais dias seguidos
+02047101,1992-01-24,50.099998474121094,mesmo valor em 3 ou mais dias seguidos
+02047101,1992-01-25,50.099998474121094,mesmo valor em 3 ou mais dias seguidos
+02047101,1997-04-24,210.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02047101,2013-01-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02047101,2013-01-16,10.0,mesmo valor em 3 ou mais dias seguidos
+02047101,2013-01-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02047101,2014-02-13,5.0,mesmo valor em 3 ou mais dias seguidos
+02047101,2014-02-14,5.0,mesmo valor em 3 ou mais dias seguidos
+02047101,2014-02-15,5.0,mesmo valor em 3 ou mais dias seguidos
+02047116,2001-03-12,11.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02047116,2001-03-13,11.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02047116,2001-03-14,11.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02047129,2017-01-23,2855.39990234375,acima de 700 mm
+02047129,2017-01-26,928.5999755859375,acima de 700 mm
+02047129,2017-01-27,2195.60009765625,acima de 700 mm
+02048013,2011-02-26,16.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02048013,2011-02-27,16.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02048013,2011-02-28,16.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02048028,1997-12-01,10.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02048028,1997-12-02,10.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02048028,1997-12-03,10.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02048033,1997-01-30,207.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02049003,2021-11-11,650.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02049003,2021-11-19,339.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02049012,1980-09-28,279.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02049027,1991-12-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02049027,1991-12-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02049027,1991-12-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02049029,1997-03-03,5.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02049029,1997-03-04,5.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02049029,1997-03-05,5.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02049033,2023-10-05,145.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02049067,1983-11-07,300.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02049073,2010-10-03,24.0,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-04,24.0,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-05,24.0,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-08,30.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-09,30.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-10,30.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-11,30.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-12,30.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-13,30.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-14,30.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-18,37.70000076293945,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-19,37.70000076293945,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-20,37.70000076293945,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-21,37.70000076293945,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-24,49.0,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-25,49.0,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-26,49.0,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-27,49.0,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-28,49.0,mesmo valor em 3 ou mais dias seguidos
+02049073,2010-10-29,49.0,mesmo valor em 3 ou mais dias seguidos
+02049074,2022-02-15,122.80000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02049074,2023-03-23,233.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02049075,2011-01-23,357.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02050009,2018-12-07,107.80000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02050009,2020-03-11,159.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02050009,2021-01-28,204.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02050009,2021-04-22,231.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02050009,2023-01-23,214.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02050012,2020-12-16,293.29998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02050012,2021-06-17,325.8999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02050051,2017-06-08,927.2000122070312,acima de 700 mm
+02051014,1989-03-15,395.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02051018,2000-05-06,120.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02051018,2008-12-30,107.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02051018,2012-01-10,343.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146013,2017-01-08,308.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146094,2011-10-20,231.77999877929688,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146117,2014-10-18,253.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146117,2016-03-23,241.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146117,2018-03-15,335.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146117,2018-03-17,110.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146117,2018-12-19,300.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146118,2013-11-29,203.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146118,2016-01-13,2321.39990234375,acima de 700 mm
+02146118,2017-03-31,752.4000244140625,acima de 700 mm
+02146118,2017-08-25,749.0,acima de 700 mm
+02146118,2017-08-26,5172.2001953125,acima de 700 mm
+02146118,2017-09-05,204.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146118,2017-09-07,750.7999877929688,acima de 700 mm
+02146118,2017-09-08,548.5999755859375,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146118,2017-09-09,1974.5999755859375,acima de 700 mm
+02146118,2017-09-12,698.7999877929688,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146118,2017-09-13,831.7999877929688,acima de 700 mm
+02146118,2018-01-10,4273.2001953125,acima de 700 mm
+02146118,2018-01-11,684.2000122070312,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02146118,2018-01-15,1684.199951171875,acima de 700 mm
+02146118,2018-07-24,141.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147003,2022-02-25,10.0,mesmo valor em 3 ou mais dias seguidos
+02147003,2022-02-26,10.0,mesmo valor em 3 ou mais dias seguidos
+02147003,2022-02-27,10.0,mesmo valor em 3 ou mais dias seguidos
+02147006,2012-11-23,12.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02147006,2012-11-24,12.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02147006,2012-11-25,12.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02147006,2013-02-09,18.0,mesmo valor em 3 ou mais dias seguidos
+02147006,2013-02-10,18.0,mesmo valor em 3 ou mais dias seguidos
+02147006,2013-02-11,18.0,mesmo valor em 3 ou mais dias seguidos
+02147006,2015-04-04,7.400000095367432,mesmo valor em 3 ou mais dias seguidos
+02147006,2015-04-05,7.400000095367432,mesmo valor em 3 ou mais dias seguidos
+02147006,2015-04-06,7.400000095367432,mesmo valor em 3 ou mais dias seguidos
+02147006,2016-12-07,10.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02147006,2016-12-08,10.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02147006,2016-12-09,10.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02147006,2017-02-18,18.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02147006,2017-02-19,18.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02147006,2017-02-20,18.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02147006,2017-02-21,18.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02147006,2023-01-23,550.5999755859375,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147007,1988-12-08,105.19999694824219,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147007,2005-10-29,10.0,mesmo valor em 3 ou mais dias seguidos
+02147007,2005-10-30,10.0,mesmo valor em 3 ou mais dias seguidos
+02147007,2005-10-31,10.0,mesmo valor em 3 ou mais dias seguidos
+02147013,2007-01-04,353.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147027,1986-02-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02147027,1986-02-16,10.0,mesmo valor em 3 ou mais dias seguidos
+02147027,1986-02-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02147027,2011-10-25,215.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147027,2015-12-25,5.0,mesmo valor em 3 ou mais dias seguidos
+02147027,2015-12-26,5.0,mesmo valor em 3 ou mais dias seguidos
+02147027,2015-12-27,5.0,mesmo valor em 3 ou mais dias seguidos
+02147027,2015-12-28,5.0,mesmo valor em 3 ou mais dias seguidos
+02147027,2015-12-29,5.0,mesmo valor em 3 ou mais dias seguidos
+02147027,2015-12-30,5.0,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-04,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-05,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-06,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-07,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-08,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-09,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-10,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-11,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-12,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-13,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-14,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-15,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-16,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-17,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-18,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-19,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-20,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-21,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-22,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-23,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147049,1981-09-24,17.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02147071,2012-01-24,202.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147073,1989-03-16,396.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147077,2023-05-21,113.80000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147086,1997-02-22,662.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147167,2012-03-06,316.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147175,2007-02-14,117.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147175,2009-02-19,104.5999984741211,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147175,2011-10-19,120.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2009-04-01,506.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2015-08-05,339.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2015-11-24,850.5999755859375,acima de 700 mm
+02147176,2015-12-01,860.0999755859375,acima de 700 mm
+02147176,2015-12-08,912.9000244140625,acima de 700 mm
+02147176,2015-12-25,972.9000244140625,acima de 700 mm
+02147176,2015-12-28,984.5,acima de 700 mm
+02147176,2018-01-31,291.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2018-05-10,145.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2018-09-19,473.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2018-10-02,487.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2019-01-15,369.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2019-12-21,253.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2019-12-22,391.8999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02147176,2019-12-29,363.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148007,2013-09-29,11.0,mesmo valor em 3 ou mais dias seguidos
+02148007,2013-09-30,11.0,mesmo valor em 3 ou mais dias seguidos
+02148007,2013-10-01,11.0,mesmo valor em 3 ou mais dias seguidos
+02148012,1996-02-01,220.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148031,2023-06-26,106.69999694824219,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148036,2019-04-07,5.0,mesmo valor em 3 ou mais dias seguidos
+02148036,2019-04-08,5.0,mesmo valor em 3 ou mais dias seguidos
+02148036,2019-04-09,5.0,mesmo valor em 3 ou mais dias seguidos
+02148038,1989-03-30,102.30000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148061,2011-12-03,22.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02148061,2011-12-04,22.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02148061,2011-12-05,22.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02148061,2011-12-06,22.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02148061,2011-12-07,22.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02148061,2011-12-08,22.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02148061,2011-12-09,22.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02148079,2001-12-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02148079,2001-12-16,10.0,mesmo valor em 3 ou mais dias seguidos
+02148079,2001-12-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02148121,1981-02-15,272.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148123,2001-03-30,5.0,mesmo valor em 3 ou mais dias seguidos
+02148123,2001-03-31,5.0,mesmo valor em 3 ou mais dias seguidos
+02148123,2001-04-01,5.0,mesmo valor em 3 ou mais dias seguidos
+02148130,1987-02-24,245.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148130,1987-04-07,144.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148168,2020-10-30,290.29998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148183,2011-10-21,103.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148185,2012-01-17,894.02001953125,acima de 700 mm
+02148185,2012-01-18,362.8999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02148186,2019-01-24,25618.80078125,acima de 700 mm
+02149001,2022-12-30,470.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149007,1983-11-03,8.0,mesmo valor em 3 ou mais dias seguidos
+02149007,1983-11-04,8.0,mesmo valor em 3 ou mais dias seguidos
+02149007,1983-11-05,8.0,mesmo valor em 3 ou mais dias seguidos
+02149008,1983-07-07,153.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149008,1984-03-09,252.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149008,1991-02-16,110.5999984741211,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149017,2013-01-02,369.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149022,2006-12-13,165.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149022,2012-01-11,10.0,mesmo valor em 3 ou mais dias seguidos
+02149022,2012-01-12,10.0,mesmo valor em 3 ou mais dias seguidos
+02149022,2012-01-13,10.0,mesmo valor em 3 ou mais dias seguidos
+02149028,2016-02-27,264.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149043,1980-03-07,297.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149043,1984-12-21,10.0,mesmo valor em 3 ou mais dias seguidos
+02149043,1984-12-22,10.0,mesmo valor em 3 ou mais dias seguidos
+02149043,1984-12-23,10.0,mesmo valor em 3 ou mais dias seguidos
+02149064,1988-02-23,395.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149069,2006-02-26,260.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149069,2010-02-09,428.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149078,2020-07-30,336.1000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149098,2015-11-24,619.4000244140625,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149098,2015-12-01,848.7999877929688,acima de 700 mm
+02149099,2017-02-21,3121.0,acima de 700 mm
+02149099,2017-09-05,3509.199951171875,acima de 700 mm
+02149100,2015-04-30,120.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-05-07,175.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-05-08,228.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-06-19,227.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-06-20,149.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-06-24,415.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-06-25,224.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-08-24,104.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-08-25,137.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-09-02,127.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-10-05,103.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-10-06,188.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-10-18,129.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-10-19,107.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2015-10-22,244.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2016-01-22,225.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2016-08-12,146.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2016-09-21,242.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2016-10-01,220.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2016-10-10,207.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2016-11-19,410.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2016-11-20,100.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2016-12-15,392.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2016-12-16,140.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-03-21,194.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-03-30,128.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-03-31,111.5999984741211,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-04-01,272.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-04-02,124.80000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-07-02,237.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-07-03,375.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-07-04,112.80000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-08-05,191.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-09-01,230.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-09-24,153.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-09-25,101.5999984741211,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-10-07,285.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-10-16,226.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2017-12-12,266.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-02-04,117.5999984741211,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-02-05,101.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-04-16,118.19999694824219,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-08-17,139.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-09-12,213.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-10-06,303.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-10-20,383.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-10-21,132.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-11-06,211.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149100,2018-12-08,251.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02149101,2017-05-15,1114.4000244140625,acima de 700 mm
+02150025,2000-08-26,999.0,acima de 700 mm
+02150025,2000-08-27,999.0,acima de 700 mm
+02150028,2007-07-20,183.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02150040,2000-08-13,999.0,acima de 700 mm
+02150041,2021-09-24,170.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02150041,2022-02-02,235.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02150067,2017-01-11,318.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02150090,2020-10-13,153.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02151003,2017-05-25,108.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02151007,2000-06-30,999.0,acima de 700 mm
+02151012,2000-11-25,276.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02151048,1998-06-24,269.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02151051,2023-01-30,700.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02151060,1982-10-08,304.8999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02151060,1982-10-09,503.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244005,2000-08-27,999.0,acima de 700 mm
+02244005,2000-08-30,999.0,acima de 700 mm
+02244007,2007-02-23,308.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244007,2007-12-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02244007,2007-12-20,10.0,mesmo valor em 3 ou mais dias seguidos
+02244007,2007-12-21,10.0,mesmo valor em 3 ou mais dias seguidos
+02244010,2016-12-14,6.900000095367432,mesmo valor em 3 ou mais dias seguidos
+02244010,2016-12-15,6.900000095367432,mesmo valor em 3 ou mais dias seguidos
+02244010,2016-12-16,6.900000095367432,mesmo valor em 3 ou mais dias seguidos
+02244015,1980-01-07,229.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-01-09,315.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-01-30,294.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-02-07,260.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-02-09,307.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-03-23,114.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-03-25,360.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-04-05,271.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-04-07,475.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-04-21,152.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-05-05,233.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-05-07,145.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-05-23,134.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-05-31,223.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-06-02,155.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-06-07,315.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-06-29,200.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-06-30,313.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-07-11,159.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-07-20,110.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-08-05,220.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-08-29,160.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-08-31,185.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-09-02,179.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-09-04,380.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-09-08,143.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-10-04,231.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1980-12-04,213.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1981-01-04,260.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1981-04-02,235.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1981-04-04,211.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1981-05-04,219.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1981-06-01,379.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1981-06-02,190.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244015,1981-07-01,258.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02244026,2000-01-16,10.0,mesmo valor em 3 ou mais dias seguidos
+02244026,2000-01-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02244026,2000-01-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02244026,2000-01-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02244026,2000-01-27,10.0,mesmo valor em 3 ou mais dias seguidos
+02244026,2000-01-28,10.0,mesmo valor em 3 ou mais dias seguidos
+02244026,2000-01-29,10.0,mesmo valor em 3 ou mais dias seguidos
+02245002,1986-12-16,21.0,mesmo valor em 3 ou mais dias seguidos
+02245002,1986-12-17,21.0,mesmo valor em 3 ou mais dias seguidos
+02245002,1986-12-18,21.0,mesmo valor em 3 ou mais dias seguidos
+02245018,1991-12-31,9.0,mesmo valor em 3 ou mais dias seguidos
+02245018,1992-01-01,9.0,mesmo valor em 3 ou mais dias seguidos
+02245018,1992-01-02,9.0,mesmo valor em 3 ou mais dias seguidos
+02245018,1992-01-03,9.0,mesmo valor em 3 ou mais dias seguidos
+02245024,1992-02-28,211.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02245024,1998-10-10,13.5,mesmo valor em 3 ou mais dias seguidos
+02245024,1998-10-11,13.5,mesmo valor em 3 ou mais dias seguidos
+02245024,1998-10-12,13.5,mesmo valor em 3 ou mais dias seguidos
+02245024,1998-10-13,13.5,mesmo valor em 3 ou mais dias seguidos
+02245024,2001-11-16,8.0,mesmo valor em 3 ou mais dias seguidos
+02245024,2001-11-17,8.0,mesmo valor em 3 ou mais dias seguidos
+02245024,2001-11-18,8.0,mesmo valor em 3 ou mais dias seguidos
+02245028,1986-01-31,272.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02245035,1993-01-22,10.0,mesmo valor em 3 ou mais dias seguidos
+02245035,1993-01-23,10.0,mesmo valor em 3 ou mais dias seguidos
+02245035,1993-01-24,10.0,mesmo valor em 3 ou mais dias seguidos
+02245035,2003-03-11,5.0,mesmo valor em 3 ou mais dias seguidos
+02245035,2003-03-12,5.0,mesmo valor em 3 ou mais dias seguidos
+02245035,2003-03-13,5.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1995-10-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1995-10-16,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1995-10-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1995-10-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1995-10-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1995-10-20,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1995-10-28,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1995-10-29,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1995-10-30,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1998-01-07,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1998-01-08,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1998-01-09,10.0,mesmo valor em 3 ou mais dias seguidos
+02245045,1998-01-10,10.0,mesmo valor em 3 ou mais dias seguidos
+02245046,1987-04-23,336.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02245048,2019-04-12,7.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02245048,2019-04-13,7.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02245048,2019-04-14,7.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02245055,2022-12-31,10.0,mesmo valor em 3 ou mais dias seguidos
+02245055,2023-01-01,10.0,mesmo valor em 3 ou mais dias seguidos
+02245055,2023-01-02,10.0,mesmo valor em 3 ou mais dias seguidos
+02245122,1988-10-30,9.0,mesmo valor em 3 ou mais dias seguidos
+02245122,1988-10-31,9.0,mesmo valor em 3 ou mais dias seguidos
+02245122,1988-11-01,9.0,mesmo valor em 3 ou mais dias seguidos
+02245122,1993-05-30,255.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02246003,2008-12-03,203.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02246017,1983-12-31,377.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02246023,1999-09-04,828.9000244140625,acima de 700 mm
+02246023,1999-09-05,822.4000244140625,acima de 700 mm
+02246023,1999-09-06,822.4000244140625,acima de 700 mm
+02246023,1999-09-07,822.4000244140625,acima de 700 mm
+02246023,1999-09-08,822.4000244140625,acima de 700 mm
+02246023,1999-09-09,822.4000244140625,acima de 700 mm
+02246023,1999-09-10,822.4000244140625,acima de 700 mm
+02246023,1999-09-11,822.4000244140625,acima de 700 mm
+02246023,1999-09-12,822.4000244140625,acima de 700 mm
+02246023,1999-09-13,822.4000244140625,acima de 700 mm
+02246023,1999-09-14,822.4000244140625,acima de 700 mm
+02246023,1999-09-15,822.4000244140625,acima de 700 mm
+02246023,1999-09-16,822.4000244140625,acima de 700 mm
+02246023,1999-09-17,822.4000244140625,acima de 700 mm
+02246023,1999-09-18,822.4000244140625,acima de 700 mm
+02246023,1999-09-19,822.4000244140625,acima de 700 mm
+02246023,1999-09-20,822.4000244140625,acima de 700 mm
+02246023,1999-09-21,822.4000244140625,acima de 700 mm
+02246023,1999-09-22,822.4000244140625,acima de 700 mm
+02246023,1999-09-23,822.4000244140625,acima de 700 mm
+02246023,1999-09-24,822.4000244140625,acima de 700 mm
+02246023,1999-09-25,822.4000244140625,acima de 700 mm
+02246023,1999-09-26,822.4000244140625,acima de 700 mm
+02246023,1999-09-27,822.4000244140625,acima de 700 mm
+02246023,1999-09-28,822.4000244140625,acima de 700 mm
+02246023,1999-09-29,822.4000244140625,acima de 700 mm
+02246023,1999-09-30,822.4000244140625,acima de 700 mm
+02246032,1996-09-08,28.0,mesmo valor em 3 ou mais dias seguidos
+02246032,1996-09-09,28.0,mesmo valor em 3 ou mais dias seguidos
+02246032,1996-09-10,28.0,mesmo valor em 3 ou mais dias seguidos
+02246034,1984-06-09,198.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02246034,1987-01-30,219.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02246038,2000-02-22,283.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02246085,2021-12-05,173.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02246186,2009-02-05,282.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247004,2016-12-11,7.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02247004,2016-12-12,7.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02247004,2016-12-13,7.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02247032,2000-02-12,319.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247046,2016-03-21,103.30000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-01-01,217.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-01-05,556.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-01-16,468.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-02-09,224.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-02-16,253.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-03-25,267.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-04-29,154.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-05-20,212.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-05-23,331.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-06-07,216.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-06-11,112.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-06-27,253.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-06-29,353.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-07-02,195.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-07-29,213.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-08-04,424.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-08-05,328.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-08-31,143.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-09-02,264.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-09-05,243.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-09-29,214.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-10-01,106.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-10-26,215.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1980-11-04,451.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1981-03-02,282.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1981-03-05,379.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1981-04-02,263.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1981-04-05,258.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1981-09-02,246.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1981-10-04,449.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1981-11-01,267.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247073,1981-11-03,312.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247075,1981-04-30,13.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02247075,1981-05-01,13.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02247075,1981-05-02,13.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02247075,1981-05-03,13.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02247075,1981-09-06,10.0,mesmo valor em 3 ou mais dias seguidos
+02247075,1981-09-07,10.0,mesmo valor em 3 ou mais dias seguidos
+02247075,1981-09-08,10.0,mesmo valor em 3 ou mais dias seguidos
+02247098,1987-02-10,532.2999877929688,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247197,2022-02-02,23.0,mesmo valor em 3 ou mais dias seguidos
+02247197,2022-02-03,23.0,mesmo valor em 3 ou mais dias seguidos
+02247197,2022-02-04,23.0,mesmo valor em 3 ou mais dias seguidos
+02247198,2008-11-22,202.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247198,2015-03-11,10.0,mesmo valor em 3 ou mais dias seguidos
+02247198,2015-03-12,10.0,mesmo valor em 3 ou mais dias seguidos
+02247198,2015-03-13,10.0,mesmo valor em 3 ou mais dias seguidos
+02247201,2011-06-29,141.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247201,2011-10-03,17367.099609375,acima de 700 mm
+02247201,2011-10-04,17487.400390625,acima de 700 mm
+02247201,2011-10-11,17347.099609375,acima de 700 mm
+02247201,2011-10-14,17301.599609375,acima de 700 mm
+02247201,2011-10-15,12332.2001953125,acima de 700 mm
+02247201,2011-10-25,7464.89990234375,acima de 700 mm
+02247207,1983-03-16,280.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247217,2010-08-19,283.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247220,2013-07-13,616.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247220,2013-09-05,176.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247220,2013-09-20,737.5,acima de 700 mm
+02247220,2013-11-23,477.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247220,2013-12-11,296.29998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247220,2014-02-24,322.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247220,2014-06-22,324.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247220,2014-07-09,347.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247220,2014-07-10,626.7999877929688,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02247220,2014-10-24,2893.800048828125,acima de 700 mm
+02247220,2014-10-26,1711.0,acima de 700 mm
+02247220,2014-11-03,1749.199951171875,acima de 700 mm
+02247222,2010-09-29,10.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2010-09-30,10.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2010-10-01,10.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2011-01-18,30.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2011-01-19,30.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2011-01-20,30.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2015-01-03,5.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2015-01-04,5.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2015-01-05,5.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2020-02-02,20.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2020-02-03,20.0,mesmo valor em 3 ou mais dias seguidos
+02247222,2020-02-04,20.0,mesmo valor em 3 ou mais dias seguidos
+02247225,2009-08-26,399.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248008,1992-02-03,400.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248019,2016-01-26,379.29998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248019,2018-07-03,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-04,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-05,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-06,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-07,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-08,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-09,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-10,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-11,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-12,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-13,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-14,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-15,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-16,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-17,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-18,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-19,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-20,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-22,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-23,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-24,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-25,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-26,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-27,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-28,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-29,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-30,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248019,2018-07-31,99.9000015258789,mesmo valor em 3 ou mais dias seguidos
+02248023,1997-05-24,999.0,acima de 700 mm
+02248023,2000-08-31,999.0,acima de 700 mm
+02248027,1986-02-18,304.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248027,1986-12-07,33.0,mesmo valor em 3 ou mais dias seguidos
+02248027,1986-12-08,33.0,mesmo valor em 3 ou mais dias seguidos
+02248027,1986-12-09,33.0,mesmo valor em 3 ou mais dias seguidos
+02248028,2001-07-26,6.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02248028,2001-07-27,6.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02248028,2001-07-28,6.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02248048,1999-07-04,10.0,mesmo valor em 3 ou mais dias seguidos
+02248048,1999-07-05,10.0,mesmo valor em 3 ou mais dias seguidos
+02248048,1999-07-06,10.0,mesmo valor em 3 ou mais dias seguidos
+02248075,1980-01-03,169.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-01-05,201.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-01-16,531.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-02-03,426.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-02-09,287.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-02-16,493.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-04-04,369.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-04-07,325.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-04-29,419.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-05-04,348.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-05-27,199.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-05-30,138.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-06-07,183.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-06-27,547.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-06-29,418.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-06-30,288.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-07-04,285.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-07-05,746.0,acima de 700 mm
+02248075,1980-07-27,181.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-07-29,806.0,acima de 700 mm
+02248075,1980-07-30,122.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-08-01,159.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-08-04,444.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-08-05,580.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-09-02,124.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-10-05,254.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-10-28,415.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-12-09,671.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1980-12-24,280.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1981-01-02,293.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1981-07-04,140.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1981-09-01,223.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1981-09-02,127.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1981-09-05,168.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248075,1981-12-01,924.0,acima de 700 mm
+02248117,2018-06-18,310.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248117,2018-06-21,232.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248117,2018-08-10,247.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248117,2018-09-09,220.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248117,2018-12-06,462.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248117,2019-01-06,324.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248121,2017-05-16,816.0,acima de 700 mm
+02248130,2012-04-29,317.9700012207031,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-01,238.8699951171875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-03,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-04,137.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-05,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-06,137.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-07,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-08,172.22999572753906,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-09,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-10,172.22999572753906,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-11,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-13,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-15,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-16,202.86000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-18,202.86000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-19,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-20,202.86000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-21,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-22,202.86000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-23,253.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-24,202.86000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-27,236.47000122070312,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-28,189.05999755859375,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-29,236.47000122070312,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-30,189.05999755859375,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-05-31,236.47000122070312,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-06-02,236.47000122070312,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-06-04,236.47000122070312,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2012-06-06,236.47000122070312,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02248130,2019-09-23,50363.80078125,acima de 700 mm
+02249005,2014-12-18,133.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249008,2003-03-16,160.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249011,1982-12-19,13.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02249011,1982-12-20,13.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02249011,1982-12-21,13.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02249012,1989-12-30,11.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02249012,1989-12-31,11.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02249012,1990-01-01,11.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02249014,1987-11-20,186.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249023,2022-01-25,271.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249023,2023-11-25,331.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249027,2000-05-07,112.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249029,1981-05-07,147.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249032,2007-01-03,20.0,mesmo valor em 3 ou mais dias seguidos
+02249032,2007-01-04,20.0,mesmo valor em 3 ou mais dias seguidos
+02249032,2007-01-05,20.0,mesmo valor em 3 ou mais dias seguidos
+02249032,2007-01-06,20.0,mesmo valor em 3 ou mais dias seguidos
+02249060,2015-02-25,210.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249062,2005-02-14,370.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249066,1994-01-08,98.30000305175781,mesmo valor em 3 ou mais dias seguidos
+02249066,1994-01-09,98.30000305175781,mesmo valor em 3 ou mais dias seguidos
+02249066,1994-01-10,98.30000305175781,mesmo valor em 3 ou mais dias seguidos
+02249066,2021-12-03,820.0,acima de 700 mm
+02249070,1983-06-08,366.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249070,2007-01-16,263.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249070,2008-02-20,513.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249071,2017-11-20,5.0,mesmo valor em 3 ou mais dias seguidos
+02249071,2017-11-21,5.0,mesmo valor em 3 ou mais dias seguidos
+02249071,2017-11-22,5.0,mesmo valor em 3 ou mais dias seguidos
+02249109,2004-07-28,205.75,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249109,2004-08-18,4840.25,acima de 700 mm
+02249109,2018-11-19,300.25,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249110,2014-01-30,265.75,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249110,2015-05-31,370.75,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249110,2016-12-12,295.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249110,2016-12-13,296.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249112,2011-09-30,218.30999755859375,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02249113,2017-12-12,315.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02250009,2005-11-07,115.30000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02250009,2023-06-05,100.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02250011,2003-12-10,284.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02250011,2004-05-31,216.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02250063,2012-01-09,127.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02250086,1986-11-03,212.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02250089,2016-02-11,328.25,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02250096,2012-07-02,118.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02251012,2021-01-22,252.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02251066,2015-03-16,240.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02252034,2021-03-24,125.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02252039,1983-02-10,211.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02252053,2014-12-26,332.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02253003,1996-04-12,159.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02344018,2011-04-09,9.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02344018,2011-04-10,9.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02344018,2011-04-11,9.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02345019,1989-03-23,412.1000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345022,2007-10-23,18.5,mesmo valor em 3 ou mais dias seguidos
+02345022,2007-10-24,18.5,mesmo valor em 3 ou mais dias seguidos
+02345022,2007-10-25,18.5,mesmo valor em 3 ou mais dias seguidos
+02345023,2000-05-04,198.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345024,2021-02-14,204.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345025,1982-03-15,401.1000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345034,1996-09-04,201.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345036,1980-09-14,300.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345036,1980-09-15,500.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345036,1987-06-08,20.0,mesmo valor em 3 ou mais dias seguidos
+02345036,1987-06-09,20.0,mesmo valor em 3 ou mais dias seguidos
+02345036,1987-06-10,20.0,mesmo valor em 3 ou mais dias seguidos
+02345036,1988-11-16,327.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345037,1990-01-31,166.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345044,1988-02-09,410.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345044,1992-01-08,113.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345056,1984-12-04,263.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345056,1985-02-14,447.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345056,1993-02-25,10.0,mesmo valor em 3 ou mais dias seguidos
+02345056,1993-02-26,10.0,mesmo valor em 3 ou mais dias seguidos
+02345056,1993-02-27,10.0,mesmo valor em 3 ou mais dias seguidos
+02345057,1982-01-27,10.0,mesmo valor em 3 ou mais dias seguidos
+02345057,1982-01-28,10.0,mesmo valor em 3 ou mais dias seguidos
+02345057,1982-01-29,10.0,mesmo valor em 3 ou mais dias seguidos
+02345057,1982-01-30,10.0,mesmo valor em 3 ou mais dias seguidos
+02345058,1983-03-31,265.1000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345058,2003-12-08,174.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345058,2019-01-08,139.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345058,2022-03-12,119.5999984741211,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345062,1988-01-06,5.0,mesmo valor em 3 ou mais dias seguidos
+02345062,1988-01-07,5.0,mesmo valor em 3 ou mais dias seguidos
+02345062,1988-01-08,5.0,mesmo valor em 3 ou mais dias seguidos
+02345063,1981-11-21,7.0,mesmo valor em 3 ou mais dias seguidos
+02345063,1981-11-22,7.0,mesmo valor em 3 ou mais dias seguidos
+02345063,1981-11-23,7.0,mesmo valor em 3 ou mais dias seguidos
+02345063,1981-11-24,7.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-09-10,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-09-11,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-09-12,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-09-13,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-10-31,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-11-01,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-11-02,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-12-01,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-12-02,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2015-12-03,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2016-11-11,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2016-11-12,10.0,mesmo valor em 3 ou mais dias seguidos
+02345063,2016-11-13,10.0,mesmo valor em 3 ou mais dias seguidos
+02345148,1983-02-07,299.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345156,1994-05-16,10.0,mesmo valor em 3 ou mais dias seguidos
+02345156,1994-05-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02345156,1994-05-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02345156,1994-05-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02345202,2003-07-08,208.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02345204,2017-08-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02345204,2017-08-20,10.0,mesmo valor em 3 ou mais dias seguidos
+02345204,2017-08-21,10.0,mesmo valor em 3 ou mais dias seguidos
+02346007,2020-12-07,305.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346013,1980-02-20,301.8999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346013,1980-09-11,101.19999694824219,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346013,1980-09-12,103.19999694824219,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346014,2000-02-10,35.0,mesmo valor em 3 ou mais dias seguidos
+02346014,2000-02-11,35.0,mesmo valor em 3 ou mais dias seguidos
+02346014,2000-02-12,35.0,mesmo valor em 3 ou mais dias seguidos
+02346014,2000-02-13,35.0,mesmo valor em 3 ou mais dias seguidos
+02346014,2000-02-14,35.0,mesmo valor em 3 ou mais dias seguidos
+02346014,2011-01-01,11.5,mesmo valor em 3 ou mais dias seguidos
+02346014,2011-01-02,11.5,mesmo valor em 3 ou mais dias seguidos
+02346014,2011-01-03,11.5,mesmo valor em 3 ou mais dias seguidos
+02346014,2011-01-08,6.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02346014,2011-01-09,6.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02346014,2011-01-10,6.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02346023,2000-01-18,17.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02346023,2000-01-19,17.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02346023,2000-01-20,17.799999237060547,mesmo valor em 3 ou mais dias seguidos
+02346032,1982-10-30,450.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346032,1987-02-09,448.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346037,1983-09-29,225.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346039,1999-01-06,10.0,mesmo valor em 3 ou mais dias seguidos
+02346039,1999-01-07,10.0,mesmo valor em 3 ou mais dias seguidos
+02346039,1999-01-08,10.0,mesmo valor em 3 ou mais dias seguidos
+02346039,1999-01-09,10.0,mesmo valor em 3 ou mais dias seguidos
+02346046,1986-09-09,103.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346046,1987-02-23,200.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346047,2012-01-30,256.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346055,1987-01-03,10.0,mesmo valor em 3 ou mais dias seguidos
+02346055,1987-01-04,10.0,mesmo valor em 3 ou mais dias seguidos
+02346055,1987-01-05,10.0,mesmo valor em 3 ou mais dias seguidos
+02346055,1989-01-20,10.0,mesmo valor em 3 ou mais dias seguidos
+02346055,1989-01-21,10.0,mesmo valor em 3 ou mais dias seguidos
+02346055,1989-01-22,10.0,mesmo valor em 3 ou mais dias seguidos
+02346055,1989-02-23,20.0,mesmo valor em 3 ou mais dias seguidos
+02346055,1989-02-24,20.0,mesmo valor em 3 ou mais dias seguidos
+02346055,1989-02-25,20.0,mesmo valor em 3 ou mais dias seguidos
+02346055,1989-03-25,200.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346065,2009-10-28,302.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346068,1988-12-22,10.0,mesmo valor em 3 ou mais dias seguidos
+02346068,1988-12-23,10.0,mesmo valor em 3 ou mais dias seguidos
+02346068,1988-12-24,10.0,mesmo valor em 3 ou mais dias seguidos
+02346076,1981-04-02,341.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346076,1989-06-29,201.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346076,1995-12-24,10.0,mesmo valor em 3 ou mais dias seguidos
+02346076,1995-12-25,10.0,mesmo valor em 3 ou mais dias seguidos
+02346076,1995-12-26,10.0,mesmo valor em 3 ou mais dias seguidos
+02346078,1996-12-11,410.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346080,1995-12-24,10.0,mesmo valor em 3 ou mais dias seguidos
+02346080,1995-12-25,10.0,mesmo valor em 3 ou mais dias seguidos
+02346080,1995-12-26,10.0,mesmo valor em 3 ou mais dias seguidos
+02346080,1995-12-27,10.0,mesmo valor em 3 ou mais dias seguidos
+02346080,1995-12-28,10.0,mesmo valor em 3 ou mais dias seguidos
+02346090,1989-06-19,202.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346090,2004-11-13,10.0,mesmo valor em 3 ou mais dias seguidos
+02346090,2004-11-14,10.0,mesmo valor em 3 ou mais dias seguidos
+02346090,2004-11-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02346090,2020-02-14,220.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346090,2020-03-06,330.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346090,2021-02-19,706.0,acima de 700 mm
+02346090,2022-01-04,400.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346090,2023-02-23,240.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346091,1981-02-09,302.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346091,1988-04-21,441.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346094,2010-12-16,228.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346094,2010-12-19,383.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346094,2011-01-21,355.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346094,2016-01-13,11.0,mesmo valor em 3 ou mais dias seguidos
+02346094,2016-01-14,11.0,mesmo valor em 3 ou mais dias seguidos
+02346094,2016-01-15,11.0,mesmo valor em 3 ou mais dias seguidos
+02346094,2016-01-16,11.0,mesmo valor em 3 ou mais dias seguidos
+02346094,2019-03-19,8.0,mesmo valor em 3 ou mais dias seguidos
+02346094,2019-03-20,8.0,mesmo valor em 3 ou mais dias seguidos
+02346094,2019-03-21,8.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-04-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-04-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-04-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-06-01,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-06-02,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-06-03,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-09-04,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-09-05,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-09-06,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-10-05,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-10-06,10.0,mesmo valor em 3 ou mais dias seguidos
+02346095,2023-10-07,10.0,mesmo valor em 3 ou mais dias seguidos
+02346097,1990-06-05,126.5999984741211,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346106,1992-09-18,15.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02346106,1992-09-19,15.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02346106,1992-09-20,15.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02346106,1993-06-09,23.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02346106,1993-06-10,23.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02346106,1993-06-11,23.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02346127,2023-02-14,387.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346170,1982-08-23,9.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02346170,1982-08-24,9.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02346170,1982-08-25,9.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02346170,1982-08-26,9.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02346170,1982-08-27,9.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02346170,1982-08-28,9.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02346170,1982-08-29,9.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02346170,1982-08-30,9.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-20,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-21,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-22,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-23,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-24,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-25,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-26,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-27,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-28,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-29,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346199,1983-07-30,26.600000381469727,mesmo valor em 3 ou mais dias seguidos
+02346297,2001-05-12,10.0,mesmo valor em 3 ou mais dias seguidos
+02346297,2001-05-13,10.0,mesmo valor em 3 ou mais dias seguidos
+02346297,2001-05-14,10.0,mesmo valor em 3 ou mais dias seguidos
+02346297,2001-05-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02346297,2001-07-27,10.0,mesmo valor em 3 ou mais dias seguidos
+02346297,2001-07-28,10.0,mesmo valor em 3 ou mais dias seguidos
+02346297,2001-07-29,10.0,mesmo valor em 3 ou mais dias seguidos
+02346297,2001-07-30,10.0,mesmo valor em 3 ou mais dias seguidos
+02346303,1987-05-04,349.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346303,1987-06-02,266.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346326,2014-02-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02346326,2014-02-16,10.0,mesmo valor em 3 ou mais dias seguidos
+02346326,2014-02-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02346326,2014-02-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02346329,1984-06-06,105.9000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346333,2020-03-30,116.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346334,1984-09-12,110.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346336,1997-02-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02346336,1997-02-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02346336,1997-02-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2007-03-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2007-03-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2007-03-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2007-07-23,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2007-07-24,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2007-07-25,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2007-12-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2007-12-20,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2007-12-21,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-01-04,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-01-05,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-01-06,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-01-07,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-02-02,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-02-03,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-02-04,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-02-05,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-02-06,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-02-07,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-05-30,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-05-31,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-06-01,10.0,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-12-25,7.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-12-26,7.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-12-27,7.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02346342,2008-12-28,7.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02346342,2009-04-04,10.5,mesmo valor em 3 ou mais dias seguidos
+02346342,2009-04-05,10.5,mesmo valor em 3 ou mais dias seguidos
+02346342,2009-04-06,10.5,mesmo valor em 3 ou mais dias seguidos
+02346342,2017-08-16,5.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346342,2017-08-17,5.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346342,2017-08-18,5.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346342,2017-08-19,13.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346342,2017-08-20,13.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346342,2017-08-21,13.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346342,2020-02-25,13.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346342,2020-02-26,13.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346342,2020-02-27,13.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346342,2020-02-28,13.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02346347,1981-01-29,428.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346352,1989-09-25,21.5,mesmo valor em 3 ou mais dias seguidos
+02346352,1989-09-26,21.5,mesmo valor em 3 ou mais dias seguidos
+02346352,1989-09-27,21.5,mesmo valor em 3 ou mais dias seguidos
+02346352,1993-03-18,8.5,mesmo valor em 3 ou mais dias seguidos
+02346352,1993-03-19,8.5,mesmo valor em 3 ou mais dias seguidos
+02346352,1993-03-20,8.5,mesmo valor em 3 ou mais dias seguidos
+02346352,1993-03-21,8.5,mesmo valor em 3 ou mais dias seguidos
+02346393,1983-08-26,158.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346399,1988-06-11,304.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346406,1986-12-24,10.0,mesmo valor em 3 ou mais dias seguidos
+02346406,1986-12-25,10.0,mesmo valor em 3 ou mais dias seguidos
+02346406,1986-12-26,10.0,mesmo valor em 3 ou mais dias seguidos
+02346406,1986-12-27,10.0,mesmo valor em 3 ou mais dias seguidos
+02346406,1987-05-20,415.8999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346417,1990-06-15,205.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346423,1995-12-01,165.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346446,2017-03-04,200.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02346446,2022-02-01,20.0,mesmo valor em 3 ou mais dias seguidos
+02346446,2022-02-02,20.0,mesmo valor em 3 ou mais dias seguidos
+02346446,2022-02-03,20.0,mesmo valor em 3 ou mais dias seguidos
+02346446,2023-02-22,10.0,mesmo valor em 3 ou mais dias seguidos
+02346446,2023-02-23,10.0,mesmo valor em 3 ou mais dias seguidos
+02346446,2023-02-24,10.0,mesmo valor em 3 ou mais dias seguidos
+02346446,2023-02-25,10.0,mesmo valor em 3 ou mais dias seguidos
+02346446,2023-05-31,15.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02346446,2023-06-01,15.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02346446,2023-06-02,15.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02346462,2005-05-14,117.19999694824219,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347022,1991-03-26,20.0,mesmo valor em 3 ou mais dias seguidos
+02347022,1991-03-27,20.0,mesmo valor em 3 ou mais dias seguidos
+02347022,1991-03-28,20.0,mesmo valor em 3 ou mais dias seguidos
+02347022,1991-09-29,20.0,mesmo valor em 3 ou mais dias seguidos
+02347022,1991-09-30,20.0,mesmo valor em 3 ou mais dias seguidos
+02347022,1991-10-01,20.0,mesmo valor em 3 ou mais dias seguidos
+02347026,2003-03-31,158.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347026,2006-12-25,282.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347027,2004-01-29,255.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347033,1998-09-26,10.0,mesmo valor em 3 ou mais dias seguidos
+02347033,1998-09-27,10.0,mesmo valor em 3 ou mais dias seguidos
+02347033,1998-09-28,10.0,mesmo valor em 3 ou mais dias seguidos
+02347042,1986-09-10,353.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347053,2007-02-11,241.10000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347057,2008-11-23,313.29998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347060,2004-06-01,204.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2010-04-04,231.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2015-05-04,230.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2017-05-19,420.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2017-05-20,260.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2017-05-22,490.1000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2017-06-14,270.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2017-08-21,350.8999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2017-12-31,280.29998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2018-01-13,250.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2018-01-25,370.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347061,2018-01-30,510.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347062,2001-04-30,134.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02347213,2010-10-07,5.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-08,5.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-09,5.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-10,5.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-11,5.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-12,5.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-13,5.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-14,5.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-18,9.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-19,9.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-20,9.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-21,9.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-22,9.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-23,9.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-24,9.100000381469727,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-26,13.5,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-27,13.5,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-28,13.5,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-29,13.5,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-30,14.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-10-31,14.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-01,14.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-02,14.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-03,14.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-04,14.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-22,10.0,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-23,10.0,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-24,10.0,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-25,12.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-26,12.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-27,12.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-11-28,12.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-05,18.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-06,18.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-07,18.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-08,18.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-09,18.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-10,18.399999618530273,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-26,43.900001525878906,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-27,43.900001525878906,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-28,43.900001525878906,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-29,43.900001525878906,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-30,43.900001525878906,mesmo valor em 3 ou mais dias seguidos
+02347213,2010-12-31,43.900001525878906,mesmo valor em 3 ou mais dias seguidos
+02347213,2011-01-01,43.900001525878906,mesmo valor em 3 ou mais dias seguidos
+02347213,2011-10-10,14825.099609375,acima de 700 mm
+02347213,2011-10-11,17452.599609375,acima de 700 mm
+02347213,2011-10-15,17499.30078125,acima de 700 mm
+02347213,2011-10-20,14852.599609375,acima de 700 mm
+02347213,2011-10-24,13988.0,acima de 700 mm
+02347213,2011-10-25,10258.400390625,acima de 700 mm
+02347213,2012-11-22,643.4000244140625,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348004,1995-02-01,13.0,mesmo valor em 3 ou mais dias seguidos
+02348004,1995-02-02,13.0,mesmo valor em 3 ou mais dias seguidos
+02348004,1995-02-03,13.0,mesmo valor em 3 ou mais dias seguidos
+02348014,2010-05-18,203.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348037,2011-01-09,409.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348048,1991-06-20,30.0,mesmo valor em 3 ou mais dias seguidos
+02348048,1991-06-21,30.0,mesmo valor em 3 ou mais dias seguidos
+02348048,1991-06-22,30.0,mesmo valor em 3 ou mais dias seguidos
+02348048,1993-02-16,20.0,mesmo valor em 3 ou mais dias seguidos
+02348048,1993-02-17,20.0,mesmo valor em 3 ou mais dias seguidos
+02348048,1993-02-18,20.0,mesmo valor em 3 ou mais dias seguidos
+02348073,2016-01-22,105.69999694824219,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348077,1983-09-06,220.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348077,1984-03-12,275.1000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348077,1986-04-29,130.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348077,1987-06-01,218.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348088,2007-01-06,28.5,mesmo valor em 3 ou mais dias seguidos
+02348088,2007-01-07,28.5,mesmo valor em 3 ou mais dias seguidos
+02348088,2007-01-08,28.5,mesmo valor em 3 ou mais dias seguidos
+02348088,2007-11-22,162.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348088,2008-01-08,220.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348088,2008-04-18,174.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02348088,2008-05-12,104.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02349002,2021-01-04,100.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02349005,2021-01-16,289.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02349014,1997-06-29,287.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02349076,2002-09-20,352.25,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02349076,2006-08-30,130.25,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02349076,2019-12-19,206.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02349077,2013-10-20,218.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02349077,2014-02-25,323.25,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02446019,2021-01-27,213.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02446019,2021-10-06,200.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447001,1994-02-13,10.0,mesmo valor em 3 ou mais dias seguidos
+02447001,1994-02-14,10.0,mesmo valor em 3 ou mais dias seguidos
+02447001,1994-02-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02447003,1989-03-01,999.0,acima de 700 mm
+02447010,2015-05-13,9.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02447010,2015-05-14,9.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02447010,2015-05-15,9.199999809265137,mesmo valor em 3 ou mais dias seguidos
+02447021,1992-10-07,7.5,mesmo valor em 3 ou mais dias seguidos
+02447021,1992-10-08,7.5,mesmo valor em 3 ou mais dias seguidos
+02447021,1992-10-09,7.5,mesmo valor em 3 ou mais dias seguidos
+02447024,2010-01-06,328.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447024,2010-04-14,323.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447024,2010-05-15,208.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447024,2010-07-24,281.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447024,2010-12-16,262.3999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447024,2011-03-06,326.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447024,2011-03-23,284.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447024,2011-05-22,128.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447024,2012-01-09,414.8999938964844,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447024,2012-02-03,266.29998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447027,1997-10-11,183.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447028,2008-10-16,163.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1982-11-01,333.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1982-12-01,427.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1983-01-01,195.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1983-02-28,376.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1983-04-30,326.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1983-05-15,243.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1983-05-31,234.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1983-06-15,237.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1983-07-31,114.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1983-09-30,302.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1983-10-22,235.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1984-01-31,225.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1984-02-16,132.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1984-03-16,138.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1984-08-19,277.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1984-09-30,160.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1984-11-16,145.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1985-01-31,233.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1985-04-15,423.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1985-06-15,198.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1985-11-15,248.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1986-03-15,360.6000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1986-06-15,106.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1986-09-30,163.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1986-10-31,129.3000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1986-11-17,106.69999694824219,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1986-12-31,275.29998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1987-01-31,288.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1987-02-28,233.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1987-03-31,105.30000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1987-04-16,206.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1987-05-31,200.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1987-09-30,213.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1987-10-31,351.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1988-02-13,458.70001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1988-05-15,195.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1988-05-31,242.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1988-12-30,204.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1989-01-31,259.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1989-03-13,243.1999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447029,1990-01-31,353.20001220703125,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447042,2014-03-01,456.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447042,2014-03-22,241.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447042,2014-03-23,236.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447042,2014-04-20,477.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447042,2014-09-03,271.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447046,2005-01-17,1009.0,acima de 700 mm
+02447046,2021-07-20,324.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447058,2008-10-23,131.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447058,2014-08-12,9.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02447058,2014-08-13,9.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02447058,2014-08-14,9.800000190734863,mesmo valor em 3 ou mais dias seguidos
+02447058,2020-11-25,211.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447058,2021-01-31,400.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447062,1982-07-12,200.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02447074,1993-06-10,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-06-11,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-06-12,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-06-13,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-06-14,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-06-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-06-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-06-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-06-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-07-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-07-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,1993-07-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02447074,2018-10-06,9.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02447074,2018-10-07,9.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02447074,2018-10-08,9.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02447074,2018-10-13,9.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02447074,2018-10-14,9.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02447074,2018-10-15,9.899999618530273,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-01-05,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-01-06,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-01-07,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-01-08,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-01-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-01-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-01-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-02-15,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-02-16,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-02-17,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-02-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02447075,1995-02-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-05-07,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-05-08,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-05-09,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-05-12,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-05-13,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-05-14,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-05-26,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-05-27,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-05-28,10.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-06-16,20.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-06-17,20.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-06-18,20.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2001-06-19,20.0,mesmo valor em 3 ou mais dias seguidos
+02448009,2004-01-31,345.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448013,1993-02-20,10.0,mesmo valor em 3 ou mais dias seguidos
+02448013,1993-02-21,10.0,mesmo valor em 3 ou mais dias seguidos
+02448013,1993-02-22,10.0,mesmo valor em 3 ou mais dias seguidos
+02448014,2002-02-26,163.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448016,1980-08-14,400.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448017,2009-05-02,404.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448017,2010-08-03,389.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448020,1981-11-10,409.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448024,2009-07-27,475.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448024,2014-02-14,54.70000076293945,mesmo valor em 3 ou mais dias seguidos
+02448024,2014-02-15,54.70000076293945,mesmo valor em 3 ou mais dias seguidos
+02448024,2014-02-16,54.70000076293945,mesmo valor em 3 ou mais dias seguidos
+02448024,2015-03-06,20.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2015-03-07,20.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2015-03-08,20.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2015-09-04,6.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02448024,2015-09-05,6.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02448024,2015-09-06,6.699999809265137,mesmo valor em 3 ou mais dias seguidos
+02448024,2015-12-23,7.599999904632568,mesmo valor em 3 ou mais dias seguidos
+02448024,2015-12-24,7.599999904632568,mesmo valor em 3 ou mais dias seguidos
+02448024,2015-12-25,7.599999904632568,mesmo valor em 3 ou mais dias seguidos
+02448024,2017-05-19,23.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02448024,2017-05-20,23.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02448024,2017-05-21,23.299999237060547,mesmo valor em 3 ou mais dias seguidos
+02448024,2018-11-23,5.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2018-11-24,5.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2018-11-25,5.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2018-12-21,23.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2018-12-22,23.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2018-12-23,23.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2018-12-24,23.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2019-02-15,28.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2019-02-16,28.0,mesmo valor em 3 ou mais dias seguidos
+02448024,2019-02-17,28.0,mesmo valor em 3 ou mais dias seguidos
+02448036,2009-09-18,15.0,mesmo valor em 3 ou mais dias seguidos
+02448036,2009-09-19,15.0,mesmo valor em 3 ou mais dias seguidos
+02448036,2009-09-20,15.0,mesmo valor em 3 ou mais dias seguidos
+02448046,2015-11-10,240.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448046,2016-08-18,10.0,mesmo valor em 3 ou mais dias seguidos
+02448046,2016-08-19,10.0,mesmo valor em 3 ou mais dias seguidos
+02448046,2016-08-20,10.0,mesmo valor em 3 ou mais dias seguidos
+02448046,2016-08-21,10.0,mesmo valor em 3 ou mais dias seguidos
+02448046,2019-05-14,105.5999984741211,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448046,2021-03-02,200.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448046,2021-04-13,102.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448046,2021-09-07,180.8000030517578,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448046,2021-10-18,255.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448046,2022-02-14,465.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448046,2023-11-12,200.60000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02448047,1988-03-31,5.0,mesmo valor em 3 ou mais dias seguidos
+02448047,1988-04-01,5.0,mesmo valor em 3 ou mais dias seguidos
+02448047,1988-04-02,5.0,mesmo valor em 3 ou mais dias seguidos
+02448065,1988-05-24,10.0,mesmo valor em 3 ou mais dias seguidos
+02448065,1988-05-25,10.0,mesmo valor em 3 ou mais dias seguidos
+02448065,1988-05-26,10.0,mesmo valor em 3 ou mais dias seguidos
+02448073,2002-05-16,5.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02448073,2002-05-17,5.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02448073,2002-05-18,5.300000190734863,mesmo valor em 3 ou mais dias seguidos
+02449002,1991-03-21,200.39999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02449016,2012-08-07,116.4000015258789,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02548011,1986-02-18,258.79998779296875,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02548011,1987-09-25,123.80000305175781,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02548011,1998-12-23,30.0,mesmo valor em 3 ou mais dias seguidos
+02548011,1998-12-24,30.0,mesmo valor em 3 ou mais dias seguidos
+02548011,1998-12-25,30.0,mesmo valor em 3 ou mais dias seguidos
+02548054,1982-01-27,130.6999969482422,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02548054,1982-01-28,202.5,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02548054,1982-01-29,202.10000610351562,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02548054,1984-03-16,425.1000061035156,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02548054,1997-06-29,10.0,mesmo valor em 3 ou mais dias seguidos
+02548054,1997-06-30,10.0,mesmo valor em 3 ou mais dias seguidos
+02548054,1997-07-01,10.0,mesmo valor em 3 ou mais dias seguidos
+02548069,1993-04-22,144.0,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
+02548069,2001-04-30,150.89999389648438,vizinhos num raio de 50 km bem abaixo do valor (menos de 10%; 30% se o valor passa de 200 mm)
