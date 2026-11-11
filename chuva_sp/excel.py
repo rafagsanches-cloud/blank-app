@@ -29,9 +29,12 @@ class Pasta:
         }
 
     def tabela(self, nome: str, df: pd.DataFrame, formatos: dict[str, str] | None = None, larguras: dict[str, int] | None = None,
-               fmt_padrao: str = "num", congelar: tuple[int, int] = (1, 1), filtro: bool = True) -> None:
+               fmt_padrao: str = "num", congelar: tuple[int, int] = (1, 1), filtro: bool = True,
+               altura_cabecalho: float | None = None) -> None:
         """Escreve o DataFrame (índice vira coluna) linha a linha."""
         ws = self.wb.add_worksheet(nome[:31])
+        if altura_cabecalho:
+            ws.set_row(0, altura_cabecalho)
         df = df.reset_index() if df.index.name is not None or not isinstance(df.index, pd.RangeIndex) else df
         formatos = formatos or {}
         larguras = larguras or {}
