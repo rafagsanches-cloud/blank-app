@@ -81,7 +81,7 @@ def montar() -> dict:
     inv["pct_dias_consistidos"] = inv.codigo.map(pd.Series(nivel2).mul(100).round(1))
     inv = inv.sort_values(["serie_desde_1980", "ugrhi", "codigo"], ascending=[False, True, True]).reset_index(drop=True)
 
-    inv_u = inv.set_index("codigo").loc[diario.columns].reset_index().rename(columns={"codigo": "id"})
+    inv_u = inv.set_index("codigo").reindex(diario.columns).rename_axis("id").reset_index()
     contagem = ag.contagem_postos(diario, inv_u[inv_u.ugrhi != ""])  # a coluna SP conta todos os postos do Estado
     contagem = contagem[contagem.index <= fim.year]
     P = config.PROCESSADOS
