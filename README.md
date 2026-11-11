@@ -10,7 +10,7 @@ Os arquivos já processados estão em `saidas/` e `dados/`, prontos para uso.
 
 ## App para Mac
 
-`macos/` tem o **Chuva SP**, app nativo para macOS (SwiftUI e Swift Charts, Apple Silicon e Intel, macOS 14 ou mais novo). Ele traz os mesmos dados deste repositório dentro dele e funciona sem internet: visão geral, mapa clicável das UGRHIs, séries mensais e diárias, índices ETCCDI recalculáveis como no RClimDex, validação satélite × postos e lista de postos. Download: [versão "Chuva SP para macOS"](https://github.com/rafagsanches-cloud/blank-app/releases/tag/app-macos). Instalação e compilação: [`macos/LEIAME.md`](macos/LEIAME.md).
+`macos/` tem o **Chuva SP**, app nativo para macOS (SwiftUI e Swift Charts, Apple Silicon e Intel, macOS 14 ou mais novo). Ele traz os mesmos dados deste repositório dentro dele e funciona sem internet: visão geral, mapa clicável das UGRHIs, séries mensais e diárias, índices ETCCDI recalculáveis como no RClimDex, validação satélite × postos, lista de postos e, desde novembro de 2026, as séries das estações da ANA (HidroWeb). Download: [versão "Chuva SP para macOS"](https://github.com/rafagsanches-cloud/blank-app/releases/tag/app-macos). Instalação e compilação: [`macos/LEIAME.md`](macos/LEIAME.md).
 
 ## App para Windows
 
@@ -76,6 +76,17 @@ Os postos vêm do GHCN-Daily (NOAA), que redistribui as séries diárias da rede
 A maioria dessas séries termina entre 1997 e 2005. Para os anos recentes, o programa tem módulos prontos para a ANA (`chuva_sp/estacoes/ana.py`: web service SOAP e leitura dos arquivos exportados do HidroWeb), para o INMET (`inmet.py`: estações automáticas horárias desde 2000) e para o DAEE/SIBH (`daee.py`: leitura de arquivos exportados do portal).
 
 > **Limitação desta versão.** O ambiente de nuvem em que os arquivos foram gerados não tinha acesso aos servidores da ANA, do DAEE/SIBH, do INMET, da NASA (Earthdata) nem do CHC/UCSB. Por isso os satélites foram baixados de cópias oficiais na AWS, e os postos recentes e as séries horárias de estação não entraram nesta rodada. Na sua máquina, basta rodar `python -m chuva_sp --ana --inmet` para acrescentá-los.
+
+### Postos da ANA (HidroWeb)
+
+Em novembro de 2026 as séries da ANA entraram no projeto. O inventário do web service da ANA (`telemetriaws1.ana.gov.br`, rotas `HidroInventario` e `HidroSerieHistorica`, as mesmas usadas pelo [pyHidroWeb](https://github.com/duartejr/pyHidroWeb) e pelo [hydrobr](https://pypi.org/project/hydrobr/)) lista 3.401 estações pluviométricas dentro das 22 UGRHIs. Todas foram consultadas; 1.504 têm série diária convencional com pelo menos um ano de dados desde 1980, a maioria operada pela SP Águas (ex-DAEE). Cerca de 570 postos têm dado em 2020 e 460 em 2023, bem mais do que o GHCN-Daily oferece para os anos recentes.
+
+- Em cada mês vale o dado consistido (nível 2) quando existe; senão, o bruto (nível 1). Dias marcados como acumulados (chuva de vários dias lançada num dia só) ficam como falta, como no RClimDex.
+- As regras de falta são as mesmas do resto do projeto, e a média de cada UGRHI exige pelo menos 3 postos no dia (9 no Estado).
+- Arquivos: `dados/processados/ANA_*` (diário, mensal e anual por posto; média por UGRHI; inventário; postos por ano) e `validacao_sat_x_ana.csv` (cada satélite contra o pixel de cada posto da ANA).
+- Para baixar de novo: `python -m chuva_sp.estacoes.ana` (cerca de 15 minutos).
+
+As estações automáticas (telemétricas) também estão no inventário, mas o web service antigo não devolveu dados de 15 minutos para nenhuma das estações testadas. Esses dados ficam na API nova da ANA, que exige cadastro com identificador e senha ([manual do SNIRH](https://www.snirh.gov.br/dadoshidrometereologicos/manual)).
 
 ## Como usar
 
