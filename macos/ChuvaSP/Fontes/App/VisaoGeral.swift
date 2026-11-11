@@ -44,7 +44,7 @@ struct VisaoGeralView: View {
             }
 
             HStack(alignment: .top, spacing: 12) {
-                Cartao("Chuva média por mês", nota: "Satélites: 2001–2020. Postos: 1980–1999, quando a rede do GHCN tinha mais postos ativos.") {
+                Cartao("Chuva média por mês", nota: "Satélites e postos da ANA: 2001–2020. Postos (média): 1980–1999, quando a rede do GHCN tinha mais postos ativos.") {
                     let meses = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
                     let clima = produtos.flatMap { p -> [PontoLinha] in
                         let c = estado.climatologia(p, reg)

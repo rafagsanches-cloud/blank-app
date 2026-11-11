@@ -18,6 +18,7 @@ from __future__ import annotations
 import io
 import logging
 import re
+import time
 import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
@@ -56,34 +57,83 @@ def inventario_sp(telemetricas: bool = False) -> pd.DataFrame:
     return df
 
 
-def serie_diaria(codigo: str, inicio="01/01/1980", fim=None) -> pd.DataFrame:
-    """Série diária convencional (mm) de uma estação. Prefere dado consistido (nível 2)."""
+def _pedir(endpoint: str, params: dict, tentativas: int = 4, timeout: int = 180) -> str | None:
+    """GET no web service da ANA com novas tentativas. None quando a estação não tem dados."""
+    espera = 3.0
+    for i in range(tentativas):
+        try:
+            r = base.sessao().get(f"{WS}/{endpoint}", params=params, timeout=timeout)
+        except Exception as erro:  # rede instável: tenta de novo
+            log.debug("ANA %s %s: %s", endpoint, params.get("codEstacao"), erro)
+        else:
+            if "ErrorTable" in r.text[:3000] or "Sem dados" in r.text[:5000]:
+                return None  # a ANA responde 500 + ErrorTable quando não há série
+            if r.ok:
+                return r.text
+            if r.status_code < 500:
+                return None
+        time.sleep(espera)
+        espera *= 2
+    raise RuntimeError(f"ANA {endpoint} {params.get('codEstacao')}: sem resposta após {tentativas} tentativas")
+
+
+def serie_diaria(codigo: str, inicio="01/01/1980", fim=None, cache: bool = True) -> pd.DataFrame:
+    """Série diária convencional (mm) de uma estação (HidroSerieHistorica, tipoDados=2).
+
+    Prefere o dado consistido (nível 2) ao bruto (nível 1) em cada mês. Dias com status
+    4 (acumulado: chuva de vários dias lançada num dia só) ficam como falta, como no RClimDex.
+    """
+    arq = base.pasta_cache("ANA") / f"serie_{codigo}.parquet"
+    if cache and arq.exists():
+        return pd.read_parquet(arq)
     fim = fim or config.DATA_FIM.strftime("%d/%m/%Y")
     params = {"codEstacao": codigo, "dataInicio": inicio, "dataFim": fim, "tipoDados": "2", "nivelConsistencia": ""}
-    r = base.sessao().get(f"{WS}/HidroSerieHistorica", params=params, timeout=300)
-    r.raise_for_status()
-    t = _xml_tabelas(r.text, "SerieHistorica")
-    return _mensal_para_diario(t, codigo)
+    texto = _pedir("HidroSerieHistorica", params)
+    t = _xml_tabelas(texto, "SerieHistorica") if texto else pd.DataFrame()
+    df = _mensal_para_diario(t, codigo)
+    if cache:
+        df.to_parquet(arq, index=False)
+    return df
+
+
+COLUNAS_DIARIO = ["estacao", "data", "chuva_mm", "nivel", "status"]
 
 
 def _mensal_para_diario(t: pd.DataFrame, codigo: str) -> pd.DataFrame:
     """Converte linhas mensais (Chuva01..Chuva31) em série diária, priorizando consistidos."""
     if t.empty:
-        return pd.DataFrame(columns=["estacao", "data", "chuva_mm", "nivel"])
+        return pd.DataFrame({c: pd.Series(dtype=tp) for c, tp in
+                             zip(COLUNAS_DIARIO, ["object", "datetime64[ns]", "float64", "int8", "int8"])})
     col_data = "DataHora" if "DataHora" in t else "Data"
+    t = t.copy()
     t["mes"] = pd.to_datetime(t[col_data], dayfirst=col_data == "Data", errors="coerce").dt.to_period("M")
+    t = t[t["mes"].notna()]
     t["nivel"] = pd.to_numeric(t.get("NivelConsistencia", 1), errors="coerce").fillna(1)
-    t = t.sort_values("nivel").drop_duplicates("mes", keep="last")
+    # pluviômetro (1) antes de pluviógrafo (2) quando há as duas medições no mesmo mês
+    t["tipo"] = -pd.to_numeric(t.get("TipoMedicaoChuvas", 1), errors="coerce").fillna(1)
+    t = t.sort_values(["nivel", "tipo"]).drop_duplicates("mes", keep="last")
     linhas = []
     for _, row in t.iterrows():
+        inicio_mes = row["mes"].to_timestamp()
         for d in range(1, row["mes"].days_in_month + 1):
             v = row.get(f"Chuva{d:02d}")
-            if v in (None, ""):
+            if v is None or str(v).strip() == "":
                 continue
-            linhas.append((row["mes"].to_timestamp() + pd.Timedelta(days=d - 1), float(str(v).replace(",", ".")), row["nivel"]))
-    df = pd.DataFrame(linhas, columns=["data", "chuva_mm", "nivel"])
+            st = str(row.get(f"Chuva{d:02d}Status") or "1").strip() or "1"
+            if st in ("0", "4"):  # 0 = em branco; 4 = acumulado
+                continue
+            try:
+                valor = float(str(v).replace(",", "."))
+            except ValueError:
+                continue
+            if valor < 0:
+                continue
+            linhas.append((inicio_mes + pd.Timedelta(days=d - 1), valor, int(row["nivel"]), int(st) if st.isdigit() else 1))
+    df = pd.DataFrame(linhas, columns=COLUNAS_DIARIO[1:])
     df.insert(0, "estacao", codigo)
-    return df.sort_values("data")
+    df["nivel"] = df["nivel"].astype("int8")
+    df["status"] = df["status"].astype("int8")
+    return df.sort_values("data").reset_index(drop=True)
 
 
 def serie_telemetrica(codigo: str, inicio: str, fim: str) -> pd.DataFrame:
@@ -135,3 +185,91 @@ def baixar_todas_sp(pasta_saida: Path | None = None, workers: int = 8) -> tuple[
     larga.to_parquet(pasta_saida / "ana_sp_diario.parquet")
     inv.to_csv(pasta_saida / "ana_sp_inventario.csv", index=False)
     return inv, larga
+
+
+# ---------------------------------------------------------------- organização para o app e o Excel
+def processar_sp(min_dias: int = 365) -> dict:
+    """Junta as séries baixadas (cache) em tabelas prontas: inventário, diário, mensal, anual,
+    média por UGRHI, contagem de postos por ano e validação satélite × posto.
+
+    Usa as mesmas regras do resto do projeto (mês com mais de 3 dias sem dado = falta;
+    ano com mais de 15 = falta; média da UGRHI só com 3 postos ou mais no dia).
+    """
+    from .. import agregacao as ag
+    from .. import validacao
+
+    pasta = base.pasta_cache("ANA")
+    inv = pd.read_csv(pasta / "inventario_ws.csv", dtype=str)
+    inv = inv[inv.ugrhi.notna()].copy()
+    inv["id"] = inv["Codigo"].str.zfill(8)
+    series = {}
+    for c in inv["id"]:
+        arq = pasta / f"serie_{c}.parquet"
+        if not arq.exists():
+            continue
+        d = pd.read_parquet(arq)
+        d = d[(d.data >= pd.Timestamp(config.DATA_INICIO)) & (d.data <= pd.Timestamp(config.DATA_FIM))]
+        if len(d) >= min_dias:
+            series[c] = d.set_index("data")["chuva_mm"]
+    diario = pd.DataFrame(series).sort_index()
+    diario = diario.reindex(pd.date_range(config.DATA_INICIO, diario.index.max(), freq="D", name="data"))
+    diario = diario.astype("float32")
+    inv = inv[inv.id.isin(diario.columns)].copy()
+    num = lambda col: pd.to_numeric(inv[col], errors="coerce")  # noqa: E731
+    tab = pd.DataFrame({
+        "id": inv.id, "nome": inv.Nome.str.strip(), "municipio": inv.nmMunicipio.str.strip(),
+        "operadora": inv.OperadoraSigla.str.strip(), "responsavel": inv.ResponsavelSigla.str.strip(),
+        "ugrhi": inv.ugrhi, "lat": num("Latitude"), "lon": num("Longitude"), "altitude": num("Altitude"),
+        "operando": inv.Operando.eq("1"), "telemetrica": inv.TipoEstacaoTelemetrica.eq("1"),
+    }).set_index("id").reindex(diario.columns).rename_axis("id").reset_index()
+    validos = diario.notna()
+    tab["primeiro_dia"] = [diario.index[validos[c].values.argmax()].date() for c in tab.id]
+    tab["ultimo_dia"] = [diario.index[len(diario) - 1 - validos[c].values[::-1].argmax()].date() for c in tab.id]
+    tab["dias_validos_desde_1980"] = validos.sum().loc[tab.id].values
+    mensal = ag.diario_para_mensal(diario)
+    anual = ag.diario_para_anual(diario)
+    anual = anual[anual.index <= config.DATA_FIM.year]
+    tab["anos_completos"] = anual.notna().sum().loc[tab.id].values
+    tab["media_anual_mm"] = anual.mean().astype("float64").loc[tab.id].round(1).values
+    tab["rede"], tab["codigo_original"] = "ANA (HidroWeb)", tab["id"]
+
+    med = ag.media_postos_por_ugrhi(diario, tab)
+    out = {
+        "inventario": tab, "diario": diario, "mensal": mensal, "anual": anual,
+        "contagem": ag.contagem_postos(diario, tab),
+        "media_ugrhi": {"diario": med, "mensal": ag.diario_para_mensal(med), "anual": ag.diario_para_anual(med)},
+    }
+    out["media_ugrhi"]["anual"] = out["media_ugrhi"]["anual"][out["media_ugrhi"]["anual"].index <= config.DATA_FIM.year]
+    valid, lags = validacao.validar(tab, diario.astype("float64"))
+    out["validacao"], out["defasagens"] = valid, lags
+    return out
+
+
+def salvar_processados_sp(res: dict) -> None:
+    """Grava as tabelas da ANA em dados/processados (Parquet/CSV), sem tocar nos demais arquivos."""
+    P = config.PROCESSADOS
+    res["inventario"].to_csv(P / "ANA_inventario.csv", index=False)
+    for k in ("diario", "mensal", "anual"):
+        res[k].to_parquet(P / f"ANA_{k}.parquet")
+        res["media_ugrhi"][k].to_parquet(P / f"ANA_MEDIA_{k}.parquet")
+    res["contagem"].to_csv(P / "ANA_n_por_ano.csv")
+    res["validacao"].to_csv(P / "validacao_sat_x_ana.csv", index=False)
+
+
+def baixar_series_sp(workers: int = 6) -> pd.DataFrame:
+    """Baixa (ou lê do cache) o inventário e as séries diárias de todas as estações de SP."""
+    pasta = base.pasta_cache("ANA")
+    inv = inventario_sp()
+    inv.to_csv(pasta / "inventario_ws.csv", index=False)
+    codigos = [str(c).zfill(8) for c in inv.loc[inv.ugrhi.notna(), "Codigo"]]
+    base.executar_em_paralelo(serie_diaria, codigos, workers)
+    log.info("ANA: %d estações de SP verificadas", len(codigos))
+    return inv
+
+
+if __name__ == "__main__":  # python -m chuva_sp.estacoes.ana
+    base.configurar_log()
+    baixar_series_sp()
+    res = processar_sp()
+    salvar_processados_sp(res)
+    log.info("ANA: %d postos com série desde 1980; validação com %d linhas", len(res["inventario"]), len(res["validacao"]))

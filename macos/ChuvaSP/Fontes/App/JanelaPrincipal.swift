@@ -77,6 +77,7 @@ struct ConteudoAba: View {
         case .extremos: ExtremosView()
         case .validacao: ValidacaoView()
         case .postos: PostosView()
+        case .ana: AnaView()
         case .produtos: ProdutosView()
         }
     }

@@ -5,10 +5,16 @@ import UniformTypeIdentifiers
 // MARK: - Produtos e cores (mesma paleta do painel e do app Streamlit)
 
 enum Produto: String, CaseIterable, Identifiable, Hashable {
-    case CHIRPS, IMERG, PERSIANN, CMORPH, GPCP, POSTOS
+    case CHIRPS, IMERG, PERSIANN, CMORPH, GPCP, POSTOS, ANA
 
     var id: String { rawValue }
-    var nome: String { self == .POSTOS ? "Postos (média)" : rawValue }
+    var nome: String {
+        switch self {
+        case .POSTOS: return "Postos (média)"
+        case .ANA: return "ANA (HidroWeb)"
+        default: return rawValue
+        }
+    }
     static let satelites: [Produto] = [.CHIRPS, .IMERG, .PERSIANN, .CMORPH, .GPCP]
 
     private var hex: (claro: UInt32, escuro: UInt32) {
@@ -19,6 +25,7 @@ enum Produto: String, CaseIterable, Identifiable, Hashable {
         case .CMORPH: return (0xEDA100, 0xC98500)
         case .GPCP: return (0xE87BA4, 0xD55181)
         case .POSTOS: return (0x008300, 0x0CA30C)
+        case .ANA: return (0x7E57C2, 0xA98BEB)
         }
     }
 
@@ -41,7 +48,7 @@ extension NSColor {
 // MARK: - Telas
 
 enum Aba: String, CaseIterable, Identifiable {
-    case visaoGeral, mapa, series, extremos, validacao, postos, produtos
+    case visaoGeral, mapa, series, extremos, validacao, postos, ana, produtos
 
     var id: String { rawValue }
 
@@ -53,6 +60,7 @@ enum Aba: String, CaseIterable, Identifiable {
         case .extremos: return "Extremos (RClimDex)"
         case .validacao: return "Satélite × postos"
         case .postos: return "Postos pluviométricos"
+        case .ana: return "Postos da ANA"
         case .produtos: return "Produtos e fontes"
         }
     }
@@ -65,6 +73,7 @@ enum Aba: String, CaseIterable, Identifiable {
         case .extremos: return "cloud.bolt.rain"
         case .validacao: return "checkmark.seal"
         case .postos: return "mappin.and.ellipse"
+        case .ana: return "drop"
         case .produtos: return "info.circle"
         }
     }
@@ -74,6 +83,13 @@ enum ModoMapa: String, CaseIterable, Identifiable {
     case media, tendencia
     var id: String { rawValue }
     var titulo: String { self == .media ? "Média 2001–2020" : "Tendência (Sen)" }
+}
+
+/// Rede de postos usada na comparação com os satélites.
+enum FonteValidacao: String, CaseIterable, Identifiable {
+    case ghcn, ana
+    var id: String { rawValue }
+    var titulo: String { self == .ghcn ? "Postos do GHCN-Daily" : "Postos da ANA (HidroWeb)" }
 }
 
 enum Metrica: String, CaseIterable, Identifiable {
@@ -139,6 +155,13 @@ final class BaseDados {
     let validacao: [ValidacaoDTO]
     let produtos: [ProdutoDTO]
     let fontes: [FonteDTO]
+    // ANA (HidroWeb): arquivos ana_*; se faltarem, o app funciona como antes
+    let anaPostos: [AnaPostoDTO]
+    let anaPostosPorAno: [String: [PostosAnoDTO]]
+    let anaValidacao: [ValidacaoDTO]
+    let anaResumo: AnaResumoDTO?
+    private var anaMatrizMensal: [Float32]?
+    private var anaMatrizAnual: [Float32]?
     private var cacheDiario = [String: SerieDiaria]()
     private var cacheIndices = [String: ResultadoIndices]()
 
@@ -153,19 +176,20 @@ final class BaseDados {
             }
             .sorted { $0.codigo < $1.codigo }
         var an = [String: [Int: Double]]()
-        for a in try fonte.ler("anual.json", como: [AnualDTO].self) {
+        for a in try fonte.ler("anual.json", como: [AnualDTO].self) + ((try? fonte.ler("ana_anual.json", como: [AnualDTO].self)) ?? []) {
             guard let mm = a.mm, let p = Produto(rawValue: a.produto) else { continue }
             an[BaseDados.chave(p, a.sigla), default: [:]][a.ano] = mm
         }
         anual = an
         var me = [String: SerieMensal]()
-        for m in try fonte.ler("mensal.json", como: [MensalDTO].self) {
+        for m in try fonte.ler("mensal.json", como: [MensalDTO].self) + ((try? fonte.ler("ana_mensal.json", como: [MensalDTO].self)) ?? []) {
             guard let p = Produto(rawValue: m.produto), let ini = DataCivil(texto: m.inicio) else { continue }
             me[BaseDados.chave(p, m.sigla)] = SerieMensal(inicio: ini, valores: m.valores.map { $0 ?? .nan })
         }
         mensal = me
         var di = [String: DiarioIndiceDTO]()
-        for d in try fonte.ler("diario_indice.json", como: [DiarioIndiceDTO].self) {
+        for d in try fonte.ler("diario_indice.json", como: [DiarioIndiceDTO].self)
+            + ((try? fonte.ler("ana_diario_indice.json", como: [DiarioIndiceDTO].self)) ?? []) {
             if let p = Produto(rawValue: d.produto) { di[BaseDados.chave(p, d.sigla)] = d }
         }
         indiceDiario = di
@@ -175,6 +199,10 @@ final class BaseDados {
         validacao = try fonte.ler("validacao.json", como: [ValidacaoDTO].self)
         produtos = try fonte.ler("produtos.json", como: [ProdutoDTO].self)
         fontes = try fonte.ler("fontes.json", como: [FonteDTO].self)
+        anaPostos = (try? fonte.ler("ana_postos.json", como: [AnaPostoDTO].self)) ?? []
+        anaPostosPorAno = Dictionary(grouping: (try? fonte.ler("ana_postos_por_ano.json", como: [PostosAnoDTO].self)) ?? [], by: \.sigla)
+        anaValidacao = (try? fonte.ler("ana_validacao.json", como: [ValidacaoDTO].self)) ?? []
+        anaResumo = try? fonte.ler("ana_resumo.json", como: AnaResumoDTO.self)
     }
 
     init() {
@@ -188,6 +216,10 @@ final class BaseDados {
         validacao = []
         produtos = []
         fontes = []
+        anaPostos = []
+        anaPostosPorAno = [:]
+        anaValidacao = []
+        anaResumo = nil
     }
 
     func diario(_ p: Produto, _ sigla: String) -> SerieDiaria? {
@@ -196,6 +228,26 @@ final class BaseDados {
         guard let idx = indiceDiario[k], let fonte, let s = try? fonte.serieDiaria(idx) else { return nil }
         cacheDiario[k] = s
         return s
+    }
+
+    /// Totais mensais (desde ana_resumo.inicioMensal) de um posto da ANA; NaN = falta.
+    func anaMensal(_ p: AnaPostoDTO) -> [Double] {
+        guard let r = anaResumo else { return [] }
+        if anaMatrizMensal == nil { anaMatrizMensal = (try? fonte?.floats("ana_postos_mensal.f32")) ?? [] }
+        return BaseDados.linha(anaMatrizMensal ?? [], p.linha, r.meses)
+    }
+
+    /// Totais anuais (desde ana_resumo.anoInicial) de um posto da ANA; NaN = ano incompleto.
+    func anaAnual(_ p: AnaPostoDTO) -> [Double] {
+        guard let r = anaResumo else { return [] }
+        if anaMatrizAnual == nil { anaMatrizAnual = (try? fonte?.floats("ana_postos_anual.f32")) ?? [] }
+        return BaseDados.linha(anaMatrizAnual ?? [], p.linha, r.anos)
+    }
+
+    private static func linha(_ m: [Float32], _ k: Int, _ n: Int) -> [Double] {
+        let ini = k * n
+        guard n > 0, ini >= 0, ini + n <= m.count else { return [] }
+        return m[ini..<(ini + n)].map { Double($0) }
     }
 
     func indices(_ p: Produto, _ sigla: String, _ par: ParametrosIndices) -> ResultadoIndices? {
@@ -231,6 +283,9 @@ final class EstadoApp: ObservableObject {
     @Published var anoDiario = 2024
     @Published var metrica: Metrica = .rDiario
     @Published var busca = ""
+    @Published var anaBusca = ""
+    @Published var anaSelecionado: String?
+    @Published var fonteValidacao: FonteValidacao = .ghcn
 
     let dados: BaseDados
     let erro: String?
@@ -293,14 +348,32 @@ final class EstadoApp: ObservableObject {
         return base.filter { "\($0.id) \($0.nome) \($0.rede) \($0.codigoOriginal)".lowercased().contains(q) }
     }
 
-    func validacoes(_ sigla: String) -> [ValidacaoDTO] {
-        sigla == "SP" ? dados.validacao : dados.validacao.filter { $0.sigla == sigla }
+    func validacoes(_ sigla: String, fonte: FonteValidacao = .ghcn) -> [ValidacaoDTO] {
+        let base = fonte == .ghcn ? dados.validacao : dados.anaValidacao
+        return sigla == "SP" ? base : base.filter { $0.sigla == sigla }
     }
 
-    func medianaValidacao(_ p: Produto, _ sigla: String, _ m: Metrica) -> (valor: Double, postos: Int)? {
-        let v = validacoes(sigla).filter { $0.produto == p.rawValue }.compactMap { m.valor($0) }
+    func medianaValidacao(_ p: Produto, _ sigla: String, _ m: Metrica, fonte: FonteValidacao = .ghcn) -> (valor: Double, postos: Int)? {
+        let v = validacoes(sigla, fonte: fonte).filter { $0.produto == p.rawValue }.compactMap { m.valor($0) }
         guard !v.isEmpty else { return nil }
         return (mediana(v), v.count)
+    }
+
+    // postos da ANA
+    func anaPostosNaRegiao(_ sigla: String) -> [AnaPostoDTO] {
+        sigla == "SP" ? dados.anaPostos : dados.anaPostos.filter { $0.sigla == sigla }
+    }
+
+    var anaPostosFiltrados: [AnaPostoDTO] {
+        let q = anaBusca.trimmingCharacters(in: .whitespaces).lowercased()
+        let base = anaPostosNaRegiao(regiao)
+        guard !q.isEmpty else { return base }
+        return base.filter { "\($0.id) \($0.nome) \($0.municipio) \($0.operadora)".lowercased().contains(q) }
+    }
+
+    var anaPostoSelecionado: AnaPostoDTO? {
+        guard let id = anaSelecionado else { return nil }
+        return dados.anaPostos.first { $0.id == id }
     }
 
     /// Valores do mapa por UGRHI (média 2001–2020 ou tendência de Sen do total anual).
@@ -359,7 +432,7 @@ final class EstadoApp: ObservableObject {
         case .validacao:
             nome = "validacao_\(reg).csv"
             linhas.append(linhaCSV(["produto", "posto", "ugrhi", "rede", "dias_comuns", "r_diario", "r_mensal", "vies_pct", "kge", "csi"]))
-            for v in validacoes(reg) {
+            for v in validacoes(reg, fonte: fonteValidacao) {
                 linhas.append(linhaCSV([v.produto, v.estacao, v.sigla, v.rede, String(v.diasComuns), Fmt.csv(v.rDiario, 3),
                                         Fmt.csv(v.rMensal, 3), Fmt.csv(v.viesPct, 1), Fmt.csv(v.kge, 3), Fmt.csv(v.csi, 3)]))
             }
@@ -369,6 +442,15 @@ final class EstadoApp: ObservableObject {
             for p in postosFiltrados {
                 linhas.append(linhaCSV([p.id, p.nome, p.rede, p.codigoOriginal, p.sigla, Fmt.csv(p.lat, 4), Fmt.csv(p.lon, 4),
                                         Fmt.csv(p.altitude, 0), p.inicio, p.fim, String(p.dias)]))
+            }
+        case .ana:
+            nome = "postos_ana_\(reg).csv"
+            linhas.append(linhaCSV(["codigo_ana", "nome", "municipio", "operadora", "ugrhi", "lat", "lon", "altitude_m", "inicio", "fim",
+                                    "dias_com_dado", "anos_completos", "media_anual_mm", "operando", "telemetrica"]))
+            for p in anaPostosFiltrados {
+                linhas.append(linhaCSV([p.id, p.nome, p.municipio, p.operadora, p.sigla, Fmt.csv(p.lat, 4), Fmt.csv(p.lon, 4),
+                                        Fmt.csv(p.altitude, 0), p.inicio, p.fim, String(p.dias), String(p.anosCompletos),
+                                        Fmt.csv(p.mediaAnual, 0), p.operando ? "sim" : "não", p.telemetrica ? "sim" : "não"]))
             }
         case .produtos:
             nome = "produtos_satelite.csv"

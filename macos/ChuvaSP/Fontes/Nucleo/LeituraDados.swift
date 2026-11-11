@@ -47,6 +47,41 @@ struct PostoDTO: Decodable, Identifiable, Hashable {
     let dias: Int
 }
 
+/// Estação pluviométrica da ANA (HidroWeb) com série diária desde 1980 (ana_postos.json).
+struct AnaPostoDTO: Decodable, Identifiable, Hashable {
+    let id: String
+    let nome: String
+    let municipio: String
+    let operadora: String
+    let sigla: String
+    let lat: Double
+    let lon: Double
+    let altitude: Double?
+    let inicio: String
+    let fim: String
+    let dias: Int
+    let anosCompletos: Int
+    let mediaAnual: Double?
+    let operando: Bool
+    let telemetrica: Bool
+    /// linha do posto nas matrizes ana_postos_mensal.f32 e ana_postos_anual.f32
+    let linha: Int
+
+    var mediaOrdenavel: Double { mediaAnual ?? -1 }
+}
+
+/// Metadados dos dados da ANA (ana_resumo.json).
+struct AnaResumoDTO: Decodable {
+    let baixadoEm: String
+    let fonte: String
+    let inicioMensal: String
+    let meses: Int
+    let anoInicial: Int
+    let anos: Int
+    /// estações pluviométricas do inventário da ANA em cada região
+    let inventario: [String: Int]
+}
+
 struct PostosAnoDTO: Decodable {
     let ano: Int
     let sigla: String
@@ -133,6 +168,17 @@ final class FonteDados {
         } catch {
             throw ErroDados.arquivo(nome, error)
         }
+    }
+
+    /// Lê uma matriz Float32 little-endian (NaN = falta), como ana_postos_mensal.f32.
+    func floats(_ nome: String) throws -> [Float32] {
+        let url = pasta.appendingPathComponent(nome)
+        let dados: Data
+        do { dados = try Data(contentsOf: url) } catch { throw ErroDados.arquivo(nome, error) }
+        let n = dados.count / 4
+        var brutos = [Float32](repeating: .nan, count: n)
+        _ = brutos.withUnsafeMutableBytes { dados.copyBytes(to: $0, count: n * 4) }
+        return brutos.map { Float32(bitPattern: UInt32(littleEndian: $0.bitPattern)) }
     }
 
     /// Lê uma série diária gravada em Float32 little-endian (NaN = falta).

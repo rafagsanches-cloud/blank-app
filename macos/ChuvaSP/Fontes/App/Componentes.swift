@@ -142,7 +142,7 @@ struct GraficoLinhas: View {
             ForEach(pontos) { p in
                 LineMark(x: .value("x", p.x), y: .value(unidade, p.y), series: .value("Série", "\(p.produto.rawValue)-\(p.segmento)"))
                     .foregroundStyle(by: .value("Produto", p.produto.nome))
-                    .lineStyle(StrokeStyle(lineWidth: p.produto == .POSTOS ? 2.6 : 1.8, lineCap: .round, lineJoin: .round))
+                    .lineStyle(StrokeStyle(lineWidth: p.produto == .POSTOS || p.produto == .ANA ? 2.6 : 1.8, lineCap: .round, lineJoin: .round))
                 if p.isolado {
                     PointMark(x: .value("x", p.x), y: .value(unidade, p.y))
                         .foregroundStyle(by: .value("Produto", p.produto.nome))

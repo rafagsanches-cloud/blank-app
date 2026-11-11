@@ -49,7 +49,7 @@ jobs:
         continue-on-error: true
         run: |
           APP="macos/build/Chuva SP.app"
-          for ABA in visaoGeral mapa extremos postos; do
+          for ABA in visaoGeral mapa extremos postos ana; do
             open -n "$APP" --args --aba "$ABA" --regiao UGRHI13
             sleep 9
             pgrep -fl ChuvaSP || echo "app não está rodando"

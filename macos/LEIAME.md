@@ -14,6 +14,7 @@ Requisitos: macOS 14 Sonoma ou mais novo (inclusive macOS 26 Tahoe), em Mac com 
 | Extremos (RClimDex) | Os 13 índices ETCCDI recalculados no próprio app, com período-base, limiar do dia úmido e limiar do Rnnmm ajustáveis; tendências de Sen, Mann-Kendall e regressão linear |
 | Satélite × postos | Distribuição das métricas (r, viés, KGE, CSI) por posto e as medianas |
 | Postos pluviométricos | Lista com busca e ordenação; número de postos com dado em cada ano |
+| Postos da ANA | Estações pluviométricas da ANA (HidroWeb) com série diária desde 1980: números da região, postos com dado em cada ano, média dos postos × satélites, lista com busca e, para a estação escolhida, totais anuais e chuva média por mês |
 | Produtos e fontes | A tabela de produtos, as bases de dados e links para os arquivos |
 
 A região (Estado ou UGRHI) é escolhida na barra de ferramentas. O botão **Exportar CSV** (ou ⌘E) salva os dados da tela atual num CSV que abre no Numbers e no Excel. Na tela de extremos dá para gravar a série diária de um produto no formato de entrada do RClimDex original.
@@ -53,3 +54,13 @@ Depois de rodar o programa Python (`python -m chuva_sp`), gere de novo os dados 
 python macos/gerar_dados.py
 bash macos/construir_app.sh
 ```
+
+Os dados da ANA (HidroWeb) têm um passo próprio, que só acrescenta os arquivos `ana_*` e não mexe nos demais. Precisa de acesso a telemetriaws1.ana.gov.br (o web service público da ANA, sem senha):
+
+```bash
+python -m chuva_sp.estacoes.ana      # baixa as séries de SP e organiza (cerca de 15 min)
+python macos/gerar_dados_ana.py
+bash macos/construir_app.sh
+```
+
+A ANA tem também uma API nova, com cadastro (identificador e senha), descrita em <https://www.snirh.gov.br/dadoshidrometereologicos/manual>. Ela é necessária para os dados de 15 em 15 minutos das estações automáticas (telemétricas), que o serviço antigo não devolveu para nenhuma das estações testadas; as séries diárias convencionais usadas aqui não dependem dela.

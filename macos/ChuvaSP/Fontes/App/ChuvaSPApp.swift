@@ -54,11 +54,18 @@ enum Capturas {
             ("5_validacao", .validacao, "SP"),
             ("6_postos", .postos, "UGRHI13"),
             ("7_produtos", .produtos, "SP"),
+            ("8_postos_ana", .ana, "UGRHI13"),
+            ("9_validacao_ana", .validacao, "SP"),
         ]
         for (nome, aba, regiao) in cenarios {
             for (sufixo, aparencia) in [("claro", NSAppearance.Name.aqua), ("escuro", NSAppearance.Name.darkAqua)] {
                 estado.aba = aba
                 estado.regiao = regiao
+                estado.fonteValidacao = nome == "9_validacao_ana" ? .ana : .ghcn
+                if aba == .ana {
+                    // mostra o detalhe do posto com mais anos completos na região
+                    estado.anaSelecionado = estado.anaPostosNaRegiao(regiao).max { $0.anosCompletos < $1.anosCompletos }?.id
+                }
                 let conteudo = ConteudoAba(aba: aba)
                     .environmentObject(estado)
                     .padding(24)

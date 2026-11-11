@@ -28,7 +28,8 @@ struct ValidacaoView: View {
     var body: some View {
         let reg = estado.regiao
         let metrica = estado.metrica
-        let lista = estado.validacoes(reg)
+        let fonte = estado.fonteValidacao
+        let lista = estado.validacoes(reg, fonte: fonte)
         let produtos = Produto.satelites.filter { p in lista.contains { $0.produto == p.rawValue } }
         var pontos = [PontoValidacao]()
         var medianas = [MedianaValidacao]()
@@ -50,8 +51,17 @@ struct ValidacaoView: View {
 
         return VStack(alignment: .leading, spacing: 18) {
             CabecalhoRegiao(subtitulo: "Cada posto comparado com o pixel do satélite que o contém")
+            if !estado.dados.anaValidacao.isEmpty {
+                Picker("Comparar com", selection: $estado.fonteValidacao) {
+                    ForEach(FonteValidacao.allCases) { Text($0.titulo).tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .frame(maxWidth: 520)
+            }
             Cartao("Distribuição entre os postos",
-                   nota: "Um ponto por posto; o traço marca a mediana. IMERG e CMORPH começam em 1998, depois da maior parte das séries de postos, e por isso têm poucos postos em comum.") {
+                   nota: fonte == .ghcn
+                       ? "Um ponto por posto; o traço marca a mediana. IMERG e CMORPH começam em 1998, depois da maior parte das séries de postos, e por isso têm poucos postos em comum."
+                       : "Um ponto por posto da ANA com pelo menos um ano em comum com o satélite; o traço marca a mediana. As séries da ANA seguem pelos anos 2000, então IMERG e CMORPH têm bem mais postos para comparar.") {
                 Picker("Métrica", selection: $estado.metrica) {
                     ForEach(Metrica.allCases) { Text($0.titulo).tag($0) }
                 }
@@ -104,12 +114,12 @@ struct ValidacaoView: View {
                                 Circle().fill(p.cor).frame(width: 8, height: 8)
                                 Text(p.nome)
                             }
-                            Text(String(estado.medianaValidacao(p, reg, .rDiario)?.postos ?? 0))
-                            Text(Fmt.num(estado.medianaValidacao(p, reg, .rDiario)?.valor, 2))
-                            Text(Fmt.num(estado.medianaValidacao(p, reg, .rMensal)?.valor, 2))
-                            Text(Fmt.sinal(estado.medianaValidacao(p, reg, .viesPct)?.valor, 1))
-                            Text(Fmt.num(estado.medianaValidacao(p, reg, .kge)?.valor, 2))
-                            Text(Fmt.num(estado.medianaValidacao(p, reg, .csi)?.valor, 2))
+                            Text(String(estado.medianaValidacao(p, reg, .rDiario, fonte: fonte)?.postos ?? 0))
+                            Text(Fmt.num(estado.medianaValidacao(p, reg, .rDiario, fonte: fonte)?.valor, 2))
+                            Text(Fmt.num(estado.medianaValidacao(p, reg, .rMensal, fonte: fonte)?.valor, 2))
+                            Text(Fmt.sinal(estado.medianaValidacao(p, reg, .viesPct, fonte: fonte)?.valor, 1))
+                            Text(Fmt.num(estado.medianaValidacao(p, reg, .kge, fonte: fonte)?.valor, 2))
+                            Text(Fmt.num(estado.medianaValidacao(p, reg, .csi, fonte: fonte)?.valor, 2))
                         }
                         .monospacedDigit()
                     }
